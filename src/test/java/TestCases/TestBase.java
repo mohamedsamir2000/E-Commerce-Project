@@ -1,28 +1,46 @@
 package TestCases;
 
+import Utility.ExcelUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
+
+import java.lang.reflect.Method;
 
 public class TestBase {
-    //WebDriver base_driver;
+    WebDriver base_driver;
 
 
-//    @BeforeClass
-//    public void beforeclass(){
-//        base_driver = new ChromeDriver();
-//        base_driver.get("https://www.saucedemo.com/");
-//    }
-//
-//
-//    @AfterClass
-//    public void afterclass() {
-//        base_driver.quit();
-//
-//    }
+    @BeforeMethod
+    public void BeforeMethod(){
+        base_driver = new ChromeDriver();
+        base_driver.get("https://www.saucedemo.com/");
+    }
+
+    @DataProvider(name = "loginData")
+    public Object[][] getData(Method method) {
+
+        String excelPath = "src/test/java/Resources/LoginData.xlsx";
+        ExcelUtils excel = new ExcelUtils(excelPath, "Sheet1");
+
+        int rowCount = excel.getRowCount();
+        int colCount = excel.getColCount();
+
+        Object data[][] = new Object[rowCount - 1][colCount];
+
+        for (int i = 1; i < rowCount; i++) {
+            for (int j = 0; j < colCount; j++) {
+                data[i - 1][j] = excel.getCellData(i, j);
+            }
+        }
+        return data;
+    }
+
+    @AfterMethod
+    public void AfterClass() {
+        base_driver.quit();
+
+    }
 
 
 

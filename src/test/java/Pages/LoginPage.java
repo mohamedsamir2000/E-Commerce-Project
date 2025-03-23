@@ -10,9 +10,9 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    By usernamefield = By.id("user-name");
-    By passwordfield = By.id("password");
-    By login_btn = By.id("login-button");
+    public By usernamefield = By.id("user-name");
+    public By passwordfield = By.id("password");
+    public By login_btn = By.id("login-button");
 
     public void setUsername(String user_name){
 
