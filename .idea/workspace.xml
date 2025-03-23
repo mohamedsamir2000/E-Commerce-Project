@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="POM file creation" />
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="POM file creation">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCases/Adding_and_Removing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCases/Filter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCases/Login_and_Logout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCases/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/LoginTestCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/resources/LoginData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Resources/LoginData.xlsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,12 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/mohamedsamir2000/E-Commerce-Project",
-    "accountId": "6fc972bc-05b4-4dee-9be2-4edf40d67fe1"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mohamedsamir2000&quot;
   }
-}]]></component>
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mohamedsamir2000/E-Commerce-Project&quot;,
+    &quot;accountId&quot;: &quot;6fc972bc-05b4-4dee-9be2-4edf40d67fe1&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -38,20 +58,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TestNG.LoginTestCase.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestCases.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/test/java/TestCases&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.LoginTestCase.executor": "Run",
+    "TestNG.TestCases.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/test/java/TestCases",
+    "onboarding.tips.debug.path": "/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/TestCases" />
