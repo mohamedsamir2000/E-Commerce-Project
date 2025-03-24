@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="adding HomePage, CartPage&#10;adding new testcases">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Adding_and_Removing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Adding_and_Removing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Sort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Menu_and_Icons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Menu_and_Icons.java" afterDir="false" />
-    </list>
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="POM file creation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,51 +18,16 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="E-Commerce-Project/master" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;mohamedsamir2000&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/mohamedsamir2000/E-Commerce-Project",
+    "accountId": "6fc972bc-05b4-4dee-9be2-4edf40d67fe1"
   }
-}</component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="6fc972bc-05b4-4dee-9be2-4edf40d67fe1" />
-  </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/mohamedsamir2000/E-Commerce-Project&quot;,
-    &quot;accountId&quot;: &quot;6fc972bc-05b4-4dee-9be2-4edf40d67fe1&quot;
-  }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -81,24 +38,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.Adding_and_Removing.Test.executor": "Run",
-    "TestNG.LoginTestCase.executor": "Run",
-    "TestNG.TestCases.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/test/java/TestCases",
-    "onboarding.tips.debug.path": "/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TestNG.LoginTestCase.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestCases.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/test/java/TestCases&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/TestCases" />
@@ -109,25 +62,7 @@
       <recent name="$PROJECT_DIR$/src/test/java/Utility" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Adding_and_Removing.Test">
-    <configuration name="Adding_and_Removing.Test" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Adding_and_Removing" />
-      <option name="METHOD_NAME" value="Test" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="TestCases" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="E-Commerce_Project" />
       <extension name="coverage">
@@ -146,7 +81,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Adding_and_Removing.Test" />
         <item itemvalue="TestNG.TestCases" />
       </list>
     </recent_temporary>
@@ -184,21 +118,12 @@
       <option name="project" value="LOCAL" />
       <updated>1742611817718</updated>
     </task>
-    <task id="LOCAL-00004" summary="adding HomePage, CartPage&#10;adding new testcases">
-      <option name="closed" value="true" />
-      <created>1742769501167</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1742769501167</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="POM file creation" />
-    <MESSAGE value="adding HomePage, CartPage&#10;adding new testcases" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding HomePage, CartPage&#10;adding new testcases" />
+    <option name="LAST_COMMIT_MESSAGE" value="POM file creation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
