@@ -27,7 +27,9 @@ public class HomePage {
     public By Twitter_btn = By.xpath("//*[@id=\"page_wrapper\"]/footer/ul/li[1]/a");
     public By Facebook_btn = By.xpath("//*[@id=\"page_wrapper\"]/footer/ul/li[2]/a");
     public By Likedin_btn = By.xpath("//*[@id=\"page_wrapper\"]/footer/ul/li[3]/a");
-
+    public By removeButtons = By.xpath("//button[text()='Remove']");
+    public By addToCartButtons=By.xpath("//button[text()='Add to cart']");
+    public By inventoryContainer = By.id("inventory_container");
     //Lists of items elements
 
     public List<WebElement> getItemsName() {
@@ -40,8 +42,32 @@ public class HomePage {
         return driver.findElements(By.className("inventory_item_price"));
     }
 
-    public List<WebElement> getItemsAddToCart() {
-        return driver.findElements(By.className("btn btn_primary btn_small btn_inventory"));
+//    public List<WebElement> getItemsAddToCart() {
+//        return driver.findElements(By.className("btn btn_primary btn_small btn_inventory"));
+//    }
+//    public List<WebElement> GetremovesButtons(){
+//        return driver.findElements(By.xpath("//button[text()='Remove']"));
+//    }
+    public  void clickAllAddToCartButtons() {
+        List<WebElement> addButtons = driver.findElements(addToCartButtons);
+
+        System.out.println("Total Add to Cart buttons found: " + addButtons.size());
+
+        for (WebElement button : addButtons) {
+            button.click();
+        }
+    }
+    public int getRemoveButtonsCount() {
+        return driver.findElements(removeButtons).size();
+    }
+    //get cart count to check it
+    public int getCartItemCount() {
+        try {
+            WebElement cartBadgeElement = driver.findElement(Cart_Btn);
+            return Integer.parseInt(cartBadgeElement.getText());
+        } catch (Exception e) {
+            return 0; // No badge means no items in the cart
+        }
     }
 
 
