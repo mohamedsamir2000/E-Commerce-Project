@@ -2,13 +2,10 @@ package TestCases;
 
 import Pages.HomePage;
 import Pages.LoginPage;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.apache.poi.sl.usermodel.PresetColor.Menu;
 
-
-public class Adding_and_Removing extends TestBase{
+public class Shopping_Items extends TestBase{
     HomePage homePage;
     LoginPage loginPage;
 
@@ -24,6 +21,7 @@ public class Adding_and_Removing extends TestBase{
         loginPage.clickonlogin();
 
         homePage.ClickOn(homePage.Facebook_btn);
+
         String name = homePage.getItemsName().get(1).getText();
         System.out.println(name);
 

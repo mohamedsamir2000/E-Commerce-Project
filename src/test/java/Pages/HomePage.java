@@ -31,10 +31,12 @@ public class HomePage {
     //Lists of items elements
 
     public List<WebElement> getItemsName() {
+
         return driver.findElements(By.className("inventory_item_name"));
     }
 
     public List<WebElement> getItemsPrice() {
+
         return driver.findElements(By.className("inventory_item_price"));
     }
 

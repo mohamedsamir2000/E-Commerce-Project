@@ -18,6 +18,7 @@ public class Login_and_Logout extends TestBase{
         loginPage.setPassword(password);
         loginPage.clickonlogin();
 
+
         String actual = base_driver.getCurrentUrl();
         Assert.assertEquals(actual, ExpectedUrl);
 
