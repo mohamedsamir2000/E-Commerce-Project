@@ -1,0 +1,56 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"7beb561d-f090-4e8c-87f6-d2d066981ad4\" name=\"Changes\" comment=\"POM file creation\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\n  \"selectedUrlAndAccountId\": {\n    \"url\": \"https://github.com/mohamedsamir2000/E-Commerce-Project\",\n    \"accountId\": \"6fc972bc-05b4-4dee-9be2-4edf40d67fe1\"\n  }\n}]]></component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 4\n}</component>\n  <component name=\"ProjectId\" id=\"2ub6YlCwWa9TisJJYPidQJJmLZ7\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;TestNG.LoginTestCase.executor&quot;: &quot;Run&quot;,\n    &quot;TestNG.TestCases.executor&quot;: &quot;Run&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/test/java/TestCases&quot;,\n    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/main/java/org/example/Main.java&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/test/java/TestCases\" />\n      <recent name=\"$PROJECT_DIR$/src/test/java\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/test/java/resources\" />\n      <recent name=\"$PROJECT_DIR$/src/test/java/Utility\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"TestCases\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"E-Commerce_Project\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"TestCases.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"TestCases\" />\n      <option name=\"TEST_OBJECT\" value=\"PACKAGE\" />\n      <properties />\n      <listeners />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"TestNG.TestCases\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"7beb561d-f090-4e8c-87f6-d2d066981ad4\" name=\"Changes\" comment=\"\" />\n      <created>1742504976274</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1742504976274</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"POM file creation\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1742611626922</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1742611626922</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"POM file creation\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1742611634924</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1742611634924</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"POM file creation\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1742611817718</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1742611817718</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"4\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"POM file creation\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"POM file creation\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>\n          <line>13</line>\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision dde28a2e1ca7dd6bb3e29ec0d9ee8df332628e98)
++++ b/.idea/workspace.xml	(date 1742612213479)
+@@ -20,6 +20,12 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
++  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
++  "lastFilter": {
++    "state": "OPEN",
++    "assignee": "mohamedsamir2000"
++  }
++}]]></component>
+   <component name="GithubPullRequestsUISettings"><![CDATA[{
+   "selectedUrlAndAccountId": {
+     "url": "https://github.com/mohamedsamir2000/E-Commerce-Project",
+@@ -118,7 +124,31 @@
+       <option name="project" value="LOCAL" />
+       <updated>1742611817718</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="POM file creation">
++      <option name="closed" value="true" />
++      <created>1742612178309</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1742612178309</updated>
++    </task>
++    <task id="LOCAL-00005" summary="POM file creation">
++      <option name="closed" value="true" />
++      <created>1742612188205</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1742612188205</updated>
++    </task>
++    <task id="LOCAL-00006" summary="POM file creation">
++      <option name="closed" value="true" />
++      <created>1742612196683</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1742612196683</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">

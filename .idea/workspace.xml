@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="HomePage class edited&#10;testcases edited">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" afterDir="false" />
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="logindata for testcases sheet added">
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/TestBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +52,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "TestNG.LoginTestCase.executor": "Run",
     "TestNG.Login_and_Logout.executor": "Run",
+    "TestNG.Shopping_Items.Test.executor": "Run",
     "TestNG.TestCases (1).executor": "Run",
     "TestNG.TestCases.executor": "Run",
     "git-widget-placeholder": "master",
@@ -202,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742936162879</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="logindata for testcases sheet added">
+      <option name="closed" value="true" />
+      <created>1742937885009</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742937885009</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,7 +227,8 @@
     <MESSAGE value="POM file creation" />
     <MESSAGE value="adding HomePage, CartPage&#10;adding new testcases&#10;HomePage class edited" />
     <MESSAGE value="HomePage class edited&#10;testcases edited" />
-    <option name="LAST_COMMIT_MESSAGE" value="HomePage class edited&#10;testcases edited" />
+    <MESSAGE value="logindata for testcases sheet added" />
+    <option name="LAST_COMMIT_MESSAGE" value="logindata for testcases sheet added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

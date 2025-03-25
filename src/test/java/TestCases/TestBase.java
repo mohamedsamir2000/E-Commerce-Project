@@ -39,7 +39,7 @@ public class TestBase {
     @DataProvider(name = "loginData_TestCases")
     public Object[][] getData_TestCases(Method method) {
 
-        String excelPath = "src/test/java/Resources/LoginData_TestCases.xlsx";
+        String excelPath = "src/test/java/Resources/LoginDataTestCases.xlsx";
         ExcelUtils excel = new ExcelUtils(excelPath, "Sheet1");
 
         int rowCount = excel.getRowCount();
