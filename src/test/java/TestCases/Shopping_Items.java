@@ -11,8 +11,8 @@ public class Shopping_Items extends TestBase{
 
 
 
-    @Test(dataProvider = "loginData")
-    public void Test(String username, String password, String ExpectedUrl){
+    @Test(dataProvider = "loginData_TestCases")
+    public void Test(String username, String password){
         homePage = new HomePage(base_driver);
         loginPage = new LoginPage(base_driver);
 

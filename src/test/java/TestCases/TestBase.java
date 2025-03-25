@@ -36,6 +36,25 @@ public class TestBase {
         return data;
     }
 
+    @DataProvider(name = "loginData_TestCases")
+    public Object[][] getData_TestCases(Method method) {
+
+        String excelPath = "src/test/java/Resources/LoginData_TestCases.xlsx";
+        ExcelUtils excel = new ExcelUtils(excelPath, "Sheet1");
+
+        int rowCount = excel.getRowCount();
+        int colCount = excel.getColCount();
+
+        Object data[][] = new Object[rowCount - 1][colCount];
+
+        for (int i = 1; i < rowCount; i++) {
+            for (int j = 0; j < colCount; j++) {
+                data[i - 1][j] = excel.getCellData(i, j);
+            }
+        }
+        return data;
+    }
+
     @AfterMethod
     public void AfterClass() {
         base_driver.quit();
