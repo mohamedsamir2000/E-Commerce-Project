@@ -3,13 +3,16 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class HomePage {
 
     WebDriver driver;
+    private WebDriverWait wait;
     public HomePage(WebDriver driver){
 
         this.driver = driver;
@@ -30,6 +33,10 @@ public class HomePage {
     public By removeButtons = By.xpath("//button[text()='Remove']");
     public By addToCartButtons=By.xpath("//button[text()='Add to cart']");
     public By inventoryContainer = By.id("inventory_container");
+    //product details Locators
+    private By backButton = By.id("back-to-products");
+    private By productLinks = By.className("inventory_item_name");
+
     //Lists of items elements
 
     public List<WebElement> getItemsName() {
@@ -48,12 +55,28 @@ public class HomePage {
 //    public List<WebElement> GetremovesButtons(){
 //        return driver.findElements(By.xpath("//button[text()='Remove']"));
 //    }
+    public boolean isInventoryDisplayed(){
+       return driver.findElement(inventoryContainer).isDisplayed();
+    }
+   public int getInventoryItemCount(){
+        return driver.findElements(By.className("inventory_item")).size();
+   }
+
     public  void clickAllAddToCartButtons() {
         List<WebElement> addButtons = driver.findElements(addToCartButtons);
 
         System.out.println("Total Add to Cart buttons found: " + addButtons.size());
 
         for (WebElement button : addButtons) {
+            button.click();
+        }
+    }
+    public  void clickAllRemoveButtons() {
+        List<WebElement> removeButtonsList = driver.findElements(removeButtons);
+
+        System.out.println("Total Add to Cart buttons found: " + removeButtonsList.size());
+
+        for (WebElement button : removeButtonsList) {
             button.click();
         }
     }
@@ -67,6 +90,26 @@ public class HomePage {
             return Integer.parseInt(cartBadgeElement.getText());
         } catch (Exception e) {
             return 0; // No badge means no items in the cart
+        }
+    }
+    // Click "Add to Cart" button product details
+    public void clickAddToCart() {
+        wait.until(ExpectedConditions.elementToBeClickable(addToCartButtons)).click();
+    }
+
+    // Go back to Home page product details
+    public void goBackToHomePage() {
+        wait.until(ExpectedConditions.elementToBeClickable(backButton)).click();
+    }
+    // Get all product links product details
+    public List<WebElement> getAllProductLinks() {
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(productLinks));
+    }
+    // Click on a product by index product details
+    public void openProductByIndex(int index) {
+        List<WebElement> products = getAllProductLinks();
+        if (index < products.size()) {
+            products.get(index).click();
         }
     }
 
