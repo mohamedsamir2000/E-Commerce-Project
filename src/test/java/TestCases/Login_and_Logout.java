@@ -10,7 +10,7 @@ public class Login_and_Logout extends TestBase{
 
 
 
-    @Test(dataProvider = "loginData")
+    @Test(dataProvider = "loginData_TestCases")
     public void Testlogin(String username, String password, String ExpectedUrl){
 
         loginPage = new LoginPage(base_driver);
