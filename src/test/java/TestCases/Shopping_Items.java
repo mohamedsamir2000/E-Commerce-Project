@@ -12,7 +12,7 @@ public class Shopping_Items extends TestBase{
 
 
 
-    @Test(dataProvider = "loginData_TestCases")
+    @Test(dataProvider = "loginData")
     public void Test(String username, String password){
         homePage = new HomePage(base_driver);
         loginPage = new LoginPage(base_driver);
@@ -30,7 +30,7 @@ public class Shopping_Items extends TestBase{
 
 
     }
-    @Test(dataProvider = "loginData_TestCases")
+    @Test(dataProvider = "loginData")
     public void AddAllItemsonCart(String username, String password){
         homePage = new HomePage(base_driver);
         loginPage = new LoginPage(base_driver);
