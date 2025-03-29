@@ -1,36 +1,30 @@
 package Utility;
-
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ExcelUtils {
-    private static XSSFWorkbook workbook;
-    private static XSSFSheet sheet;
+    private Workbook workbook;
 
-    public ExcelUtils(String excelPath, String sheetName) {
+    public ExcelUtils(String filePath, String sheetName) {
         try {
-            FileInputStream fis = new FileInputStream(excelPath);
-            workbook = new XSSFWorkbook(fis);
-            sheet = workbook.getSheet(sheetName);
+            FileInputStream fileInputStream = new FileInputStream(filePath);
+            workbook = new XSSFWorkbook(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public int getRowCount() {
-        return sheet.getPhysicalNumberOfRows();
+        return workbook.getSheetAt(0).getLastRowNum();
     }
 
     public int getColCount() {
-        return sheet.getRow(0).getPhysicalNumberOfCells();
+        return workbook.getSheetAt(0).getRow(0).getLastCellNum();
     }
 
-    public String getCellData(int rowNum, int colNum) {
-        DataFormatter formatter = new DataFormatter();
-        return formatter.formatCellValue(sheet.getRow(rowNum).getCell(colNum));
+    public String getCellData(int row, int col) {
+        return workbook.getSheetAt(0).getRow(row).getCell(col).getStringCellValue();
     }
 }
