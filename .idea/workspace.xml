@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="LoginDataTestCases.xlsx">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestCases/TestLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestCases/TestLogout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/TestBase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Utility/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Utility/ExcelUtils.java" afterDir="false" />
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Login_and_Logout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Login_and_Logout.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +35,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -62,6 +56,7 @@
     "TestNG.TestCases (1).executor": "Run",
     "TestNG.TestCases.executor": "Run",
     "TestNG.TestLogin.executor": "Run",
+    "TestNG.TestLogout.executor": "Run",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -83,8 +78,8 @@
       <recent name="$PROJECT_DIR$/src/test/java/Utility" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestLogout">
-    <configuration name="Login_and_Logout" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.Login_and_Logout.loginData">
+    <configuration name="Login_and_Logout.getData" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -94,7 +89,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
       <option name="MAIN_CLASS_NAME" value="TestCases.Login_and_Logout" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="METHOD_NAME" value="getData" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Login_and_Logout.loginData" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Login_and_Logout" />
+      <option name="METHOD_NAME" value="loginData" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -113,22 +127,6 @@
       <option name="MAIN_CLASS_NAME" value="TestCases.Shopping_Items" />
       <option name="METHOD_NAME" value="Test" />
       <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCases (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
       <properties />
       <listeners />
       <method v="2">
@@ -159,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Login_and_Logout.loginData" />
+        <item itemvalue="TestNG.Login_and_Logout.getData" />
         <item itemvalue="TestNG.TestLogout" />
         <item itemvalue="TestNG.TestLogin" />
         <item itemvalue="TestNG.Shopping_Items.Test" />
-        <item itemvalue="TestNG.TestCases (1)" />
-        <item itemvalue="TestNG.Login_and_Logout" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742938060069</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update">
+      <option name="closed" value="true" />
+      <created>1743258782706</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743258782706</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,7 +257,9 @@
     <MESSAGE value="adding HomePage, CartPage&#10;adding new testcases&#10;HomePage class edited" />
     <MESSAGE value="HomePage class edited&#10;testcases edited" />
     <MESSAGE value="logindata for testcases sheet added" />
-    <option name="LAST_COMMIT_MESSAGE" value="logindata for testcases sheet added" />
+    <MESSAGE value="Upadte rahma" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
