@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage {
@@ -39,14 +42,14 @@ public class HomePage {
 
     //Lists of items elements
 
-    public List<WebElement> getItemsName() {
+    public List<String> getItemsName() {
+        return driver.findElements(By.className("inventory_item_name")).stream().map(WebElement::getText).toList();  // Collect as List<String>
 
-        return driver.findElements(By.className("inventory_item_name"));
     }
 
-    public List<WebElement> getItemsPrice() {
+    public List<String> getItemsPrice() {
 
-        return driver.findElements(By.className("inventory_item_price"));
+        return driver.findElements(By.className("inventory_item_price")).stream().map(WebElement::getText).toList();
     }
 
 //    public List<WebElement> getItemsAddToCart() {
@@ -117,10 +120,91 @@ public class HomePage {
     //sort dropdown list
     //Method to select by index
     public String selectSortingOptionByIndex(int index) {
-        WebElement dropdownElement = driver.findElement(By.className("product_sort_container"));
-        Select dropdown = new Select(dropdownElement);
-        dropdown.selectByIndex(index);
-        return dropdown.getFirstSelectedOption().getText();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        try{
+
+            // Re-fetch dropdown to avoid stale element reference
+            WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
+
+            Select select = new Select(dropdown);
+            select.selectByIndex(index);
+
+            // Re-fetch sorted elements after selection to prevent stale references
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_name")));
+
+            // Get dropdown again to ensure it is the fresh reference
+            dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
+            select = new Select(dropdown);
+
+            return select.getFirstSelectedOption().getText();
+        } catch (Exception e){
+            WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
+            Select select = new Select(dropdown);
+            select.selectByIndex(index);
+            Alert alert = driver.switchTo().alert();
+            System.out.println("Unexpected Alert Found: " + alert.getText());
+            alert.accept(); // Accept (dismiss) the alert
+            System.out.println("Alert dismissed.");
+
+
+            // Re-fetch sorted elements after selection to prevent stale references
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_name")));
+
+            // Get dropdown again to ensure it is the fresh reference
+            dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
+            select = new Select(dropdown);
+
+            return select.getFirstSelectedOption().getText();
+        }
+    }
+
+    public List<String> ListOfItems_NameAtoZ() {
+        List<String> items = new ArrayList<>();
+        items.add("Sauce Labs Backpack");
+        items.add("Sauce Labs Bike Light");
+        items.add("Sauce Labs Bolt T-Shirt");
+        items.add("Sauce Labs Fleece Jacket");
+        items.add("Sauce Labs Onesie");
+        items.add("Test.allTheThings() T-Shirt (Red)");
+
+        return items;
+    }
+
+    public List<String> ListOfItems_NameZtoA() {
+        List<String> items = new ArrayList<>();
+        items.add("Test.allTheThings() T-Shirt (Red)");
+        items.add("Sauce Labs Onesie");
+        items.add("Sauce Labs Fleece Jacket");
+        items.add("Sauce Labs Bolt T-Shirt");
+        items.add("Sauce Labs Bike Light");
+        items.add("Sauce Labs Backpack");
+
+        return items;
+    }
+
+    public List<String> ListOfItems_LowToHigh() {
+        List<String> items = new ArrayList<>();
+        items.add("$7.99");
+        items.add("$9.99");
+        items.add("$15.99");
+        items.add("$15.99");
+        items.add("$29.99");
+        items.add("$49.99");
+
+        return items;
+    }
+
+    public List<String> ListOfItems_HighToLow() {
+        List<String> items = new ArrayList<>();
+
+        items.add("$49.99");
+        items.add("$29.99");
+        items.add("$15.99");
+        items.add("$15.99");
+        items.add("$9.99");
+        items.add("$7.99");
+
+        return items;
     }
 
 
@@ -134,6 +218,7 @@ public class HomePage {
 
     //for WebElements
     public void ClickOn(WebElement button) {
+
         button.click();
     }
 }

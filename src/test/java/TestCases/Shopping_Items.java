@@ -14,8 +14,9 @@ public class Shopping_Items extends TestBase{
 
     @Test(dataProvider = "loginData")
     public void Test(String username, String password){
-        homePage = new HomePage(base_driver);
         loginPage = new LoginPage(base_driver);
+        homePage = new HomePage(base_driver);
+
 
         loginPage.setUsername(username);
         loginPage.setPassword(password);
@@ -23,17 +24,18 @@ public class Shopping_Items extends TestBase{
 
         homePage.ClickOn(homePage.Facebook_btn);
 
-        String name = homePage.getItemsName().get(1).getText();
-        System.out.println(name);
 
-        homePage.ClickOn(homePage.getItemsName().get(0));
+
+
+
 
 
     }
     @Test(dataProvider = "loginData")
     public void AddAllItemsonCart(String username, String password){
-        homePage = new HomePage(base_driver);
         loginPage = new LoginPage(base_driver);
+        homePage = new HomePage(base_driver);
+
 
         loginPage.setUsername(username);
         loginPage.setPassword(password);
@@ -52,7 +54,7 @@ public class Shopping_Items extends TestBase{
 
     }
     //will edit it again
-    @Test(dataProvider = "loginData_TestCases")
+    @Test(dataProvider = "loginData")
     public void testAddToCartFromProductDetails(String username, String password) {
         homePage = new HomePage(base_driver);
         loginPage = new LoginPage(base_driver);
