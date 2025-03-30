@@ -13,10 +13,10 @@ public class TestBase {
 
     @BeforeMethod
     public void BeforeMethod() {
-        WebDriverManager.chromedriver().setup(); // Automatically set up ChromeDriver
         base_driver = new ChromeDriver();
         base_driver.get("https://www.saucedemo.com/");
     }
+
 
     @DataProvider(name = "loginData")
     public Object[][] getData(Method method) {
@@ -36,9 +36,9 @@ public class TestBase {
         return data;
     }
 
-    @DataProvider(name = "loginData_TestCases")
+    @DataProvider(name = "login_TestCases")
     public Object[][] getData_TestCases(Method method) {
-        String excelPath = "src/test/java/Resources/LoginDataTestCases.xlsx";
+        String excelPath = "src/test/java/Resources/LoginTestCases.xlsx";
         ExcelUtils excel = new ExcelUtils(excelPath, "Sheet1");
 
         int rowCount = excel.getRowCount();
@@ -56,6 +56,7 @@ public class TestBase {
 
     @AfterMethod
     public void AfterMethod() {
+
         base_driver.quit();
     }
 }
