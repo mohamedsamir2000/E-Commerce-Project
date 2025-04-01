@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class HomePage {
 
@@ -95,26 +96,24 @@ public class HomePage {
             return 0; // No badge means no items in the cart
         }
     }
-    // Click "Add to Cart" button product details
-    public void clickAddToCart() {
-        wait.until(ExpectedConditions.elementToBeClickable(addToCartButtons)).click();
+    //for product details page Actions
+    public void AddItemtoCart(String Xpath){
+        driver.findElement(By.xpath(Xpath)).click();
+    }
+    public void CLickAddtoCartAndBack(){
+        driver.findElement(By.xpath("//button[text()='Add to cart']")).click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Add to cart']")));
+        driver.findElement(backButton).click();
+    }
+    public void ClickRemoveThenBack(){
+        driver.findElement(removeButtons).click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.findElement(backButton).click();
+
+
     }
 
-    // Go back to Home page product details
-    public void goBackToHomePage() {
-        wait.until(ExpectedConditions.elementToBeClickable(backButton)).click();
-    }
-    // Get all product links product details
-    public List<WebElement> getAllProductLinks() {
-        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(productLinks));
-    }
-    // Click on a product by index product details
-    public void openProductByIndex(int index) {
-        List<WebElement> products = getAllProductLinks();
-        if (index < products.size()) {
-            products.get(index).click();
-        }
-    }
 
 
     //sort dropdown list

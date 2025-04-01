@@ -62,21 +62,24 @@ public class Shopping_Items extends TestBase{
         loginPage.setUsername(username);
         loginPage.setPassword(password);
         loginPage.clickonlogin();
-        int totalProducts = homePage.getAllProductLinks().size();
-        int initialCartCount = homePage.getCartItemCount();
-        System.out.println("initialCartCount"+initialCartCount);
-
-        for (int i = 0; i < totalProducts; i++) {
-            homePage.openProductByIndex(i);
-            homePage.clickAddToCart();
-           homePage.goBackToHomePage();
+        String[] Allxpaths={"//*[@id=\"item_4_title_link\"]/div","//*[@id=\"item_0_title_link\"]/div","//*[@id=\"item_1_title_link\"]/div","//*[@id=\"item_5_title_link\"]/div","//*[@id=\"item_2_title_link\"]/div","//*[@id=\"item_3_title_link\"]/div"};
+        for(int i=0;i<Allxpaths.length;i++){
+            homePage.AddItemtoCart(Allxpaths[i]);
+            homePage.CLickAddtoCartAndBack();
         }
+        int CartItemsCount=homePage.getCartItemCount();
+        Assert.assertEquals(CartItemsCount,Allxpaths.length,"Cart count not correct");
+        //Test to open all product again and remove them again
+        for(int i=0;i<Allxpaths.length;i++){
+            homePage.AddItemtoCart(Allxpaths[i]);
+            homePage.ClickRemoveThenBack();
+        }
+        //get items count afterRemove all products
+        int AfterCartItemsCount=homePage.getCartItemCount();
+        System.out.println(AfterCartItemsCount);
+        Assert.assertEquals(0,AfterCartItemsCount,"Cart count not correct");
 
-        int finalCartCount = homePage.getCartItemCount();
-        Assert.assertEquals(finalCartCount, initialCartCount + totalProducts, "Cart count is incorrect!");
+
+
     }
-
-
-
-
 }
