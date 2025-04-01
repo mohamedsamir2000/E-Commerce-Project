@@ -5,6 +5,10 @@ import Pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class Shopping_Items extends TestBase{
     HomePage homePage;
@@ -79,7 +83,32 @@ public class Shopping_Items extends TestBase{
         System.out.println(AfterCartItemsCount);
         Assert.assertEquals(0,AfterCartItemsCount,"Cart count not correct");
 
-
-
     }
+    @Test(dataProvider = "loginData")
+    public void CheckItemsNames (String username, String password) {
+        homePage = new HomePage(base_driver);
+        loginPage = new LoginPage(base_driver);
+
+        loginPage.setUsername(username);
+        loginPage.setPassword(password);
+        loginPage.clickonlogin();
+        List<String> ItemsNames=homePage.getItemsName();
+        Pattern digit = Pattern.compile("[0-9]");
+        Pattern special = Pattern.compile ("[!@#$%&*()_+=|<>?{}\\[\\]~-]");
+
+        for(String name:ItemsNames) {
+            Matcher digits = digit.matcher(name);
+            Matcher SPcharacter = special.matcher(name);
+
+            boolean val1 = digits.find();
+            boolean val2 = SPcharacter.find();
+            if(val1 == false&& val2 == false){
+                System.out.println(" product name is correct :"+name);
+
+            }else
+                System.out.println("product name is not correct :" +name);
+        }
+
+        }
+
 }
