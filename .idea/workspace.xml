@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="Shopping_Items update for product details page">
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="Shopping_Items update for check items names">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,12 +30,12 @@
     &quot;assignee&quot;: &quot;mohamedsamir2000&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/mohamedsamir2000/E-Commerce-Project.git",
-    "accountId": "fccd3e08-dcd9-42ba-94bc-83fbd68c1c5b"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mohamedsamir2000/E-Commerce-Project.git&quot;,
+    &quot;accountId&quot;: &quot;fccd3e08-dcd9-42ba-94bc-83fbd68c1c5b&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/java/TestCases/Sort.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -57,6 +58,7 @@
     "TestNG.LoginTestCase.executor": "Run",
     "TestNG.Login_and_Logout.TestLogout.executor": "Run",
     "TestNG.Login_and_Logout.executor": "Run",
+    "TestNG.Shopping_Items.CheckCartItemIsOpen.executor": "Run",
     "TestNG.Shopping_Items.CheckItemsNames.executor": "Run",
     "TestNG.Shopping_Items.Test.executor": "Run",
     "TestNG.Shopping_Items.executor": "Run",
@@ -116,6 +118,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Shopping_Items.CheckCartItemIsOpen" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Shopping_Items" />
+      <option name="METHOD_NAME" value="CheckCartItemIsOpen" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Shopping_Items.CheckItemsNames" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
@@ -152,33 +172,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Sort" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Sort" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestCases" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <shortenClasspath name="NONE" />
@@ -207,19 +200,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.Shopping_Items.CheckCartItemIsOpen" />
       <item itemvalue="TestNG.Shopping_Items.CheckItemsNames" />
       <item itemvalue="TestNG.Shopping_Items.testAddToCartFromProductDetails" />
       <item itemvalue="TestNG.Login_and_Logout" />
-      <item itemvalue="TestNG.Sort" />
       <item itemvalue="TestNG.TestCases" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.Shopping_Items.CheckItemsNames" />
+        <item itemvalue="TestNG.Shopping_Items.CheckCartItemIsOpen" />
         <item itemvalue="TestNG.Shopping_Items.testAddToCartFromProductDetails" />
         <item itemvalue="TestNG.TestCases" />
         <item itemvalue="TestNG.Login_and_Logout" />
-        <item itemvalue="TestNG.Sort" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743496519016</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Shopping_Items update for check items names">
+      <option name="closed" value="true" />
+      <created>1743501106633</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1743501106633</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -333,7 +334,8 @@
     <MESSAGE value="logindata for testcases sheet added" />
     <MESSAGE value="LoginDataTestCases.xlsx updated&#10;Login_and_Logout.java updated" />
     <MESSAGE value="Shopping_Items update for product details page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shopping_Items update for product details page" />
+    <MESSAGE value="Shopping_Items update for check items names" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shopping_Items update for check items names" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
