@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="Shopping_Items update for product details page">
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="LoginDataTestCases.xlsx updated&#10;Login_and_Logout.java updated">
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCases/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/emailable-report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +34,12 @@
     &quot;assignee&quot;: &quot;mohamedsamir2000&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/mohamedsamir2000/E-Commerce-Project.git",
-    "accountId": "fccd3e08-dcd9-42ba-94bc-83fbd68c1c5b"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mohamedsamir2000/E-Commerce-Project&quot;,
+    &quot;accountId&quot;: &quot;6fc972bc-05b4-4dee-9be2-4edf40d67fe1&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/java/TestCases/Sort.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -54,20 +59,24 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "TestNG.Cart_and_Checkout.executor": "Run",
+    "TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart.executor": "Run",
+    "TestNG.Cart_and_Checkout.verifyItemRemovalFromCart.executor": "Run",
+    "TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage.executor": "Run",
     "TestNG.LoginTestCase.executor": "Run",
     "TestNG.Login_and_Logout.TestLogout.executor": "Run",
     "TestNG.Login_and_Logout.executor": "Run",
-    "TestNG.Shopping_Items.CheckItemsNames.executor": "Run",
     "TestNG.Shopping_Items.Test.executor": "Run",
     "TestNG.Shopping_Items.executor": "Run",
-    "TestNG.Shopping_Items.testAddToCartFromProductDetails.executor": "Run",
     "TestNG.Sort.NameAtoZ.executor": "Run",
     "TestNG.Sort.NameZtoA.executor": "Run",
     "TestNG.Sort.PriceLowToHigh.executor": "Run",
     "TestNG.Sort.executor": "Run",
     "TestNG.TestCases (1).executor": "Run",
     "TestNG.TestCases.executor": "Run",
+    "TestNG.test.Verify_items_can_be_sorted_by_Name_A_to_Z.executor": "Run",
     "TestNG.test.executor": "Run",
+    "TestNG.test.verifyItemRemovalFromCart.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/test/java/TestCases",
@@ -88,35 +97,25 @@
       <recent name="$PROJECT_DIR$/src/test/java/Utility" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Shopping_Items.CheckItemsNames">
-    <configuration name="Login_and_Logout" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage">
+    <configuration name="Cart_and_Checkout" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="TestCases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Login_and_Logout" />
-      <option name="GROUP_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Shopping_Items.CheckItemsNames" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -125,8 +124,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Shopping_Items" />
-      <option name="METHOD_NAME" value="CheckItemsNames" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
+      <option name="METHOD_NAME" value="verifyAllItemsCanBeRemovedFromCart" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -134,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Shopping_Items.testAddToCartFromProductDetails" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Cart_and_Checkout.verifyItemRemovalFromCart" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -143,8 +142,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Shopping_Items" />
-      <option name="METHOD_NAME" value="testAddToCartFromProductDetails" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
+      <option name="METHOD_NAME" value="verifyItemRemovalFromCart" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -152,74 +151,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Sort" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Cart_and_Checkout.verifyItemRemovalFromMainPage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="TestCases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Sort" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
+      <option name="METHOD_NAME" value="verifyItemRemovalFromMainPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCases" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="TestCases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="PROPERTIES_FILE" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.test" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
-      <listeners>
-        <listener class="org.testng.reporters.EmailableReporter2" />
-      </listeners>
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.Shopping_Items.CheckItemsNames" />
-      <item itemvalue="TestNG.Shopping_Items.testAddToCartFromProductDetails" />
-      <item itemvalue="TestNG.Login_and_Logout" />
-      <item itemvalue="TestNG.Sort" />
-      <item itemvalue="TestNG.TestCases" />
+      <item itemvalue="TestNG.Cart_and_Checkout" />
+      <item itemvalue="TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart" />
+      <item itemvalue="TestNG.Cart_and_Checkout.verifyItemRemovalFromCart" />
+      <item itemvalue="TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage" />
+      <item itemvalue="TestNG.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Shopping_Items.CheckItemsNames" />
-        <item itemvalue="TestNG.Shopping_Items.testAddToCartFromProductDetails" />
-        <item itemvalue="TestNG.TestCases" />
-        <item itemvalue="TestNG.Login_and_Logout" />
-        <item itemvalue="TestNG.Sort" />
+        <item itemvalue="TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage" />
+        <item itemvalue="TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart" />
+        <item itemvalue="TestNG.test" />
+        <item itemvalue="TestNG.Cart_and_Checkout" />
+        <item itemvalue="TestNG.Cart_and_Checkout.verifyItemRemovalFromCart" />
       </list>
     </recent_temporary>
   </component>
@@ -304,15 +284,7 @@
       <option name="project" value="LOCAL" />
       <updated>1743356266656</updated>
     </task>
-    <task id="LOCAL-00010" summary="Shopping_Items update for product details page">
-      <option name="closed" value="true" />
-      <created>1743496519016</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1743496519016</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,8 +304,7 @@
     <MESSAGE value="HomePage class edited&#10;testcases edited" />
     <MESSAGE value="logindata for testcases sheet added" />
     <MESSAGE value="LoginDataTestCases.xlsx updated&#10;Login_and_Logout.java updated" />
-    <MESSAGE value="Shopping_Items update for product details page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shopping_Items update for product details page" />
+    <option name="LAST_COMMIT_MESSAGE" value="LoginDataTestCases.xlsx updated&#10;Login_and_Logout.java updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
