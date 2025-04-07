@@ -2,6 +2,7 @@ package TestCases;
 
 import Pages.HomePage;
 import Pages.LoginPage;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -94,21 +95,41 @@ public class Shopping_Items extends TestBase{
         loginPage.clickonlogin();
         List<String> ItemsNames=homePage.getItemsName();
         Pattern digit = Pattern.compile("[0-9]");
-        Pattern special = Pattern.compile ("[!@#$%&*()_+=|<>?{}\\[\\]~-]");
-
+        Pattern special = Pattern.compile ("[!@#$%&*()+=|<>?{}\\[\\]~]");
+        int ActualCount=0;
+        int ExpectedCount=6;
         for(String name:ItemsNames) {
             Matcher digits = digit.matcher(name);
             Matcher SPcharacter = special.matcher(name);
 
             boolean val1 = digits.find();
             boolean val2 = SPcharacter.find();
-            if(val1 == false&& val2 == false){
+            if(val1 == false && val2 == false){
                 System.out.println(" product name is correct :"+name);
+                ActualCount=ActualCount+1;
 
             }else
                 System.out.println("product name is not correct :" +name);
-        }
 
         }
+        System.out.println(ActualCount+"the actual count");
+         Assert.assertEquals(ActualCount,ExpectedCount,"there is error in names of items");
+
+        }
+    @Test(dataProvider = "loginData")
+    public void CheckCartItemIsOpen (String username, String password) {
+        homePage = new HomePage(base_driver);
+        loginPage = new LoginPage(base_driver);
+
+        loginPage.setUsername(username);
+        loginPage.setPassword(password);
+        loginPage.clickonlogin();
+        base_driver.findElement(By.xpath("//*[@id=\"shopping_cart_container\"]/a")).click();
+        Assert.assertEquals(base_driver.getCurrentUrl(),"https://www.saucedemo.com/cart.html");
+
+
+
+
+    }
 
 }

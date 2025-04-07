@@ -1,22 +1,19 @@
 package Pages;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class HomePage {
 
     WebDriver driver;
-    private WebDriverWait wait;
     public HomePage(WebDriver driver){
 
         this.driver = driver;
@@ -40,6 +37,14 @@ public class HomePage {
     //product details Locators
     private By backButton = By.id("back-to-products");
     private By productLinks = By.className("inventory_item_name");
+
+    // Locator for the shopping cart icon
+    public By cartIcon = By.className("shopping_cart_link");
+
+    // Method to click on the cart icon to navigate to the cart page
+    public void clickOnCart() {
+        driver.findElement(cartIcon).click();
+    }
 
     //Lists of items elements
 
@@ -118,92 +123,144 @@ public class HomePage {
 
     //sort dropdown list
     //Method to select by index
-    public String selectSortingOptionByIndex(int index) {
+    public boolean verifySortingByName(int sortIndex) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        try{
 
-            // Re-fetch dropdown to avoid stale element reference
-            WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
-
-            Select select = new Select(dropdown);
-            select.selectByIndex(index);
-
-            // Re-fetch sorted elements after selection to prevent stale references
-            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_name")));
-
-            // Get dropdown again to ensure it is the fresh reference
-            dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
-            select = new Select(dropdown);
-
-            return select.getFirstSelectedOption().getText();
-        } catch (Exception e){
+        try {
+            // Locate dropdown and select sorting option by index
             WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
             Select select = new Select(dropdown);
-            select.selectByIndex(index);
-            Alert alert = driver.switchTo().alert();
-            System.out.println("Unexpected Alert Found: " + alert.getText());
-            alert.accept(); // Accept (dismiss) the alert
-            System.out.println("Alert dismissed.");
+            select.selectByIndex(sortIndex); // 0 = A to Z, 1 = Z to A
 
-
-            // Re-fetch sorted elements after selection to prevent stale references
+            // Wait for items to be sorted
             wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_name")));
 
-            // Get dropdown again to ensure it is the fresh reference
-            dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
-            select = new Select(dropdown);
+        } catch (Exception e) {
+            System.out.println("Exception occurred while selecting sorting option: " + e.getMessage());
 
-            return select.getFirstSelectedOption().getText();
+            try {
+                Alert alert = driver.switchTo().alert();
+                System.out.println("Unexpected Alert Found: " + alert.getText());
+                alert.accept(); // Accept (dismiss) the alert
+                System.out.println("Alert dismissed.");
+
+                // Retry selecting the sorting option after dismissing the alert
+                WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
+                Select select = new Select(dropdown);
+                select.selectByIndex(sortIndex);
+
+                // Wait for sorted elements
+                wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_name")));
+
+            } catch (NoAlertPresentException noAlert) {
+                System.out.println("No alert found after exception.");
+            }
         }
+
+        // Extract product names dynamically from the webpage
+        List<WebElement> nameElements = driver.findElements(By.className("inventory_item_name"));
+        List<String> extractedNames = new ArrayList<>();
+
+        for (WebElement nameElement : nameElements) {
+            extractedNames.add(nameElement.getText().trim());
+        }
+
+        // Sort a copy of the extracted names to compare
+        List<String> expectedSortedNames = new ArrayList<>(extractedNames);
+
+        if (sortIndex == 0) { // Name A to Z
+            Collections.sort(expectedSortedNames);
+        } else if (sortIndex == 1) { // Name Z to A
+            expectedSortedNames.sort(Collections.reverseOrder());
+        } else {
+            throw new IllegalArgumentException("Invalid index for name sorting: " + sortIndex);
+        }
+
+        // Compare the extracted names (from UI) with the expected sorted list
+        return extractedNames.equals(expectedSortedNames);
     }
 
-    public List<String> ListOfItems_NameAtoZ() {
-        List<String> items = new ArrayList<>();
-        items.add("Sauce Labs Backpack");
-        items.add("Sauce Labs Bike Light");
-        items.add("Sauce Labs Bolt T-Shirt");
-        items.add("Sauce Labs Fleece Jacket");
-        items.add("Sauce Labs Onesie");
-        items.add("Test.allTheThings() T-Shirt (Red)");
+//    public List<String> ListOfItems_NameAtoZ() {
+//        List<String> items = new ArrayList<>();
+//        items.add("Sauce Labs Backpack");
+//        items.add("Sauce Labs Bike Light");
+//        items.add("Sauce Labs Bolt T-Shirt");
+//        items.add("Sauce Labs Fleece Jacket");
+//        items.add("Sauce Labs Onesie");
+//        items.add("Test.allTheThings() T-Shirt (Red)");
+//
+//        return items;
+//    }
 
-        return items;
-    }
+//    public List<String> ListOfItems_NameZtoA() {
+//        List<String> items = new ArrayList<>();
+//        items.add("Test.allTheThings() T-Shirt (Red)");
+//        items.add("Sauce Labs Onesie");
+//        items.add("Sauce Labs Fleece Jacket");
+//        items.add("Sauce Labs Bolt T-Shirt");
+//        items.add("Sauce Labs Bike Light");
+//        items.add("Sauce Labs Backpack");
+//
+//        return items;
+//    }
 
-    public List<String> ListOfItems_NameZtoA() {
-        List<String> items = new ArrayList<>();
-        items.add("Test.allTheThings() T-Shirt (Red)");
-        items.add("Sauce Labs Onesie");
-        items.add("Sauce Labs Fleece Jacket");
-        items.add("Sauce Labs Bolt T-Shirt");
-        items.add("Sauce Labs Bike Light");
-        items.add("Sauce Labs Backpack");
 
-        return items;
-    }
+    public boolean verifySortingByPrice(int sortIndex) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
-    public List<String> ListOfItems_LowToHigh() {
-        List<String> items = new ArrayList<>();
-        items.add("$7.99");
-        items.add("$9.99");
-        items.add("$15.99");
-        items.add("$15.99");
-        items.add("$29.99");
-        items.add("$49.99");
+        try {
+            // Locate dropdown and select sorting option by index
+            WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
+            Select select = new Select(dropdown);
+            select.selectByIndex(sortIndex); // 2 = Low to High, 3 = High to Low
 
-        return items;
-    }
+            // Wait for items to be sorted
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_price")));
 
-    public List<String> ListOfItems_HighToLow() {
-        List<String> items = new ArrayList<>();
+        } catch (Exception e) {
+            System.out.println("Exception occurred while selecting sorting option: " + e.getMessage());
 
-        items.add("$49.99");
-        items.add("$29.99");
-        items.add("$15.99");
-        items.add("$15.99");
-        items.add("$9.99");
-        items.add("$7.99");
+            try {
+                Alert alert = driver.switchTo().alert();
+                System.out.println("Unexpected Alert Found: " + alert.getText());
+                alert.accept(); // Accept (dismiss) the alert
+                System.out.println("Alert dismissed.");
 
-        return items;
+                // Retry selecting the sorting option after dismissing the alert
+                WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
+                Select select = new Select(dropdown);
+                select.selectByIndex(sortIndex);
+
+                // Wait for sorted elements
+                wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_price")));
+
+            } catch (NoAlertPresentException noAlert) {
+                System.out.println("No alert found after exception.");
+            }
+        }
+
+        // Extract prices dynamically from the webpage
+        List<WebElement> priceElements = driver.findElements(By.className("inventory_item_price"));
+        List<Double> extractedPrices = new ArrayList<>();
+
+        for (WebElement priceElement : priceElements) {
+            String priceText = priceElement.getText().replace("$", "").trim(); // Remove '$' and spaces
+            extractedPrices.add(Double.parseDouble(priceText));
+        }
+
+        // Sort a copy of the extracted prices to compare
+        List<Double> expectedSortedPrices = new ArrayList<>(extractedPrices);
+
+        if (sortIndex == 2) { // Price Low to High
+            Collections.sort(expectedSortedPrices);
+        } else if (sortIndex == 3) { // Price High to Low
+            expectedSortedPrices.sort(Collections.reverseOrder());
+        } else {
+            throw new IllegalArgumentException("Invalid index for price sorting: " + sortIndex);
+        }
+
+        // Compare the extracted prices (from UI) with the expected sorted list
+        return extractedPrices.equals(expectedSortedPrices);
     }
 
 
