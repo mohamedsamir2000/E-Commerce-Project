@@ -5,8 +5,97 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="Shopping_Items update for product details page">
+      <change afterPath="$PROJECT_DIR$/allure-results/026de579-7c3f-4658-9e0f-035c624e983f-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/05888364-913f-4d6f-be98-b4e2d7233911-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/0b6f2a2a-9231-4071-89f9-9818a582547a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/0dff6108-c9c5-4dd9-89b8-318cca1e9736-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/0edb484a-ab36-49dc-8dcf-19d72d94310c-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/0f974490-8ee3-4a8d-a548-96934cf52c43-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/120df146-a1dd-4840-abcf-df3b5e945a9d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/1513d844-7eff-4d08-95aa-73fad901695f-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/15256e12-0317-4575-8eb2-e0bc37c09d98-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/1dbe6107-3eea-4bfa-94f2-bbcf34eb1698-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/29070e55-5990-4350-b391-a8351400ad6c-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/292e5eb7-e28e-4f63-95a3-1facf876d958-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/2cdd6396-e43f-4df4-8f4c-8f78bf3169f3-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/2cfd7c48-4236-4e73-b53a-f4d455d0860f-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/302fe169-2fca-43c2-ba56-f83b6265f258-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/30f7760e-3c70-4f6b-a7ff-ef71abd029c2-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/31305dd3-f63b-4a51-b2ee-cfdbf3c9083e-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/354129d9-25b5-4d74-9f47-d324e2b63890-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/39468193-a8f5-4a78-9107-df0fb4e0d7fb-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/3a607d31-32c4-41bc-bfa2-22e21606a59c-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/3c26b8bc-dff0-45d6-bc84-348c826bab8a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/3d481ef7-b5f5-4d8d-b466-6f6f66ee39f5-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/3f3731b1-0d64-4fc1-885a-10bfe0139166-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/436c5362-68b0-41bc-900f-88be743f5581-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/44878f1e-1775-4257-86ad-772bc7f6aeb8-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/4d0d01ff-973c-4caa-96ad-15b94d057a83-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/4e30e33f-c2ce-4623-81d3-9ec895d675d1-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/50659e54-305e-4315-973a-8d7dcf488318-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/521ecb46-e41a-4bea-ac06-a07a5606c0de-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/5745fb30-4628-46e7-94a6-22537353a300-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/57f67706-21a9-4b59-8318-0c9b92a02f7a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/5a012ae4-f37a-4ef9-9b5a-4fd233c67149-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/60f748fc-4b1f-4520-a80c-9a7133d43144-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/6287a9a8-ff1d-4849-b433-2e9077e6c4cf-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/67ee0bc4-ec52-477a-bfdf-d97d19ca3f58-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/6b7e7a74-74f9-47de-a859-9bba58104f47-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/6cbd5e03-86e3-4b9c-b0d1-c07e52101bbf-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/6f427073-6443-4596-8328-1ccebca17811-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/71cf7742-5e5d-4233-bbd5-f8ac7908bfc3-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/792f0a6f-f5b2-4895-8879-19ff40537565-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/79507f95-1c7b-44c2-b810-de8de13dc972-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/79da0be3-22fb-42f2-b1fb-84275b1fb138-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/7a1c9513-cbd4-4f96-909d-e7ff8d837baf-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/7c84e9d4-5781-49be-9e23-9532bbeae838-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/86d311c7-fb44-41d0-b30c-87e108f8f87b-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/89c975a0-d316-4e37-89f8-93c70dc6a070-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/8d8c34f1-e2da-4dce-8aab-374cf96f87e9-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/93dcdce4-95a4-4698-9286-b194aac9d200-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/97eb8b75-13cb-4870-95bc-5e0fd94ef3ff-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/97f66092-8e87-4fe6-abcf-41a7272ca709-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/9b4133f7-2842-4f88-ae8a-9b929bc53036-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/9cb2eab9-e019-4042-a779-f92c3681ce93-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a0caa055-d9c0-40c6-9069-90cc27df1525-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a2e8a8b0-3372-49b2-9ca1-bfa0782de961-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a3152d90-c623-453a-9a8f-5ce13f26c180-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a3a594a8-8457-4a10-aada-8350590de368-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a66ec5ce-4004-4dc5-adba-7f62ecca709c-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/a8f58983-4c1e-429f-a0ac-3f587b446a69-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/aafae328-afe7-4ec2-81c8-19030c3aba3e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/af3716e4-23eb-4b0e-910b-6be7c41176f5-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/af5353e0-ad1a-45f2-a976-f2663d958644-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/b14aa14c-167d-4ea3-a00c-94812a21e772-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/b277f375-192b-48cd-9be9-9e7cbf89c2e9-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/b592c111-6fc6-477b-b921-7a951202e423-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/b75832f1-ff01-4fa3-8564-183d5b03bc48-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/b84c667e-70ce-4dd1-926b-2ea4018b051d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/bd1ff9e4-0488-4d4c-bdcc-61c518cac9aa-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/c197b812-c6e0-403c-b28e-4471169946d3-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/c4299d7a-9183-4aeb-9bf9-3eaa1a9b9981-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/c5b35815-f86a-4c24-9a56-dc68c3c991d1-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/c5e4142e-e0bc-489d-bbaf-b7247e28a28c-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/c799517d-cef5-4b25-8a53-19385584c154-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d00daad5-b512-41a8-97d9-f69fd2579503-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d1c42a44-6bb5-453c-a911-f0fdb5476ed3-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d70c1769-1359-4a5d-a1b5-c9589753e885-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/d8aa245c-0fb3-4c76-a951-20eba9f534a7-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/dca8f73b-6f43-4615-b4a8-fb6bf62e48ba-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/e15923cd-040a-4b34-b395-a378d473de17-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/e66894cb-4db8-431e-a046-965047ca5b51-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ec0d6c32-69e4-43df-808c-62f53daf2c66-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/f351e71f-f7c6-40fb-94fc-1692438dfab4-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/f463c99a-3f27-4534-a112-a2cd48cedbf2-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/fe05854b-3837-4396-a8ba-87dbc717e49a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/ffc0238e-143f-4256-97ca-ed1805290f0b-result.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_03_2025__5_02AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_03_2025__5_02AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2025,_4_35 PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2025__4_35PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Menu_and_Icons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Menu_and_Icons.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +118,12 @@
     &quot;assignee&quot;: &quot;mohamedsamir2000&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/mohamedsamir2000/E-Commerce-Project.git",
-    "accountId": "fccd3e08-dcd9-42ba-94bc-83fbd68c1c5b"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mohamedsamir2000/E-Commerce-Project.git&quot;,
+    &quot;accountId&quot;: &quot;fccd3e08-dcd9-42ba-94bc-83fbd68c1c5b&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/java/TestCases/Sort.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -57,6 +146,16 @@
     "TestNG.LoginTestCase.executor": "Run",
     "TestNG.Login_and_Logout.TestLogout.executor": "Run",
     "TestNG.Login_and_Logout.executor": "Run",
+    "TestNG.Menu_and_Icons.ClickAllItems.executor": "Run",
+    "TestNG.Menu_and_Icons.ClickonLinkedIn.executor": "Run",
+    "TestNG.Menu_and_Icons.Clickonfacebook.executor": "Run",
+    "TestNG.Menu_and_Icons.Clickontwitter.executor": "Run",
+    "TestNG.Menu_and_Icons.Test.executor": "Run",
+    "TestNG.Menu_and_Icons.Testaddtocart.executor": "Run",
+    "TestNG.Menu_and_Icons.clickAbout.executor": "Run",
+    "TestNG.Menu_and_Icons.clickRestappstate.executor": "Run",
+    "TestNG.Menu_and_Icons.clickabout.executor": "Debug",
+    "TestNG.Menu_and_Icons.executor": "Run",
     "TestNG.Shopping_Items.CheckItemsNames.executor": "Run",
     "TestNG.Shopping_Items.Test.executor": "Run",
     "TestNG.Shopping_Items.executor": "Run",
@@ -88,35 +187,8 @@
       <recent name="$PROJECT_DIR$/src/test/java/Utility" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Shopping_Items.CheckItemsNames">
-    <configuration name="Login_and_Logout" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Login_and_Logout" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Shopping_Items.CheckItemsNames" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.Menu_and_Icons.ClickonLinkedIn">
+    <configuration name="Menu_and_Icons.ClickAllItems" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -125,8 +197,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Shopping_Items" />
-      <option name="METHOD_NAME" value="CheckItemsNames" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Menu_and_Icons" />
+      <option name="METHOD_NAME" value="ClickAllItems" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -134,7 +206,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Shopping_Items.testAddToCartFromProductDetails" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu_and_Icons.ClickonLinkedIn" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -143,8 +215,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Shopping_Items" />
-      <option name="METHOD_NAME" value="testAddToCartFromProductDetails" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Menu_and_Icons" />
+      <option name="METHOD_NAME" value="ClickonLinkedIn" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -152,74 +224,74 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Sort" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu_and_Icons.Clickonfacebook" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="TestCases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Sort" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Menu_and_Icons" />
+      <option name="METHOD_NAME" value="Clickonfacebook" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCases" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Menu_and_Icons.Clickontwitter" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="TestCases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="PROPERTIES_FILE" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Menu_and_Icons" />
+      <option name="METHOD_NAME" value="Clickontwitter" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
-      <listeners>
-        <listener class="org.testng.reporters.EmailableReporter2" />
-      </listeners>
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu_and_Icons.clickAbout" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Menu_and_Icons" />
+      <option name="METHOD_NAME" value="clickAbout" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.Shopping_Items.CheckItemsNames" />
-      <item itemvalue="TestNG.Shopping_Items.testAddToCartFromProductDetails" />
-      <item itemvalue="TestNG.Login_and_Logout" />
-      <item itemvalue="TestNG.Sort" />
-      <item itemvalue="TestNG.TestCases" />
+      <item itemvalue="TestNG.Menu_and_Icons.ClickonLinkedIn" />
+      <item itemvalue="TestNG.Menu_and_Icons.Clickonfacebook" />
+      <item itemvalue="TestNG.Menu_and_Icons.ClickAllItems" />
+      <item itemvalue="TestNG.Menu_and_Icons.Clickontwitter" />
+      <item itemvalue="TestNG.Menu_and_Icons.clickAbout" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Shopping_Items.CheckItemsNames" />
-        <item itemvalue="TestNG.Shopping_Items.testAddToCartFromProductDetails" />
-        <item itemvalue="TestNG.TestCases" />
-        <item itemvalue="TestNG.Login_and_Logout" />
-        <item itemvalue="TestNG.Sort" />
+        <item itemvalue="TestNG.Menu_and_Icons.ClickonLinkedIn" />
+        <item itemvalue="TestNG.Menu_and_Icons.Clickonfacebook" />
+        <item itemvalue="TestNG.Menu_and_Icons.Clickontwitter" />
+        <item itemvalue="TestNG.Menu_and_Icons.clickAbout" />
+        <item itemvalue="TestNG.Menu_and_Icons.ClickAllItems" />
       </list>
     </recent_temporary>
   </component>
