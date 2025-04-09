@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="Menu and Icons" />
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="Menu and Icons">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,12 +29,12 @@
     &quot;assignee&quot;: &quot;mohamedsamir2000&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/mohamedsamir2000/E-Commerce-Project.git&quot;,
-    &quot;accountId&quot;: &quot;fccd3e08-dcd9-42ba-94bc-83fbd68c1c5b&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/mohamedsamir2000/E-Commerce-Project.git",
+    "accountId": "6fc972bc-05b4-4dee-9be2-4edf40d67fe1"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/java/TestCases/Sort.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -51,7 +54,12 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "TestNG.Cart_and_Checkout.executor": "Run",
+    "TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart.executor": "Run",
+    "TestNG.Cart_and_Checkout.verifyItemRemovalFromCartPage.executor": "Run",
+    "TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage.executor": "Debug",
     "TestNG.LoginTestCase.executor": "Run",
+    "TestNG.Login_and_Logout.TestLogin.executor": "Run",
     "TestNG.Login_and_Logout.TestLogout.executor": "Run",
     "TestNG.Login_and_Logout.executor": "Run",
     "TestNG.Menu_and_Icons.ClickAllItems.executor": "Run",
@@ -95,8 +103,8 @@
       <recent name="$PROJECT_DIR$/src/test/java/Utility" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu_and_Icons.ClickonLinkedIn">
-    <configuration name="Menu_and_Icons.ClickAllItems" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart">
+    <configuration name="Cart_and_Checkout" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -105,8 +113,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Menu_and_Icons" />
-      <option name="METHOD_NAME" value="ClickAllItems" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
+      <option name="METHOD_NAME" value="verifyAllItemsCanBeRemovedFromCart" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -114,7 +139,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu_and_Icons.ClickonLinkedIn" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Cart_and_Checkout.verifyItemRemovalFromCartPage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -123,8 +148,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Menu_and_Icons" />
-      <option name="METHOD_NAME" value="ClickonLinkedIn" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
+      <option name="METHOD_NAME" value="verifyItemRemovalFromCartPage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -132,7 +157,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu_and_Icons.Clickonfacebook" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Cart_and_Checkout.verifyItemRemovalFromMainPage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -141,8 +166,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Menu_and_Icons" />
-      <option name="METHOD_NAME" value="Clickonfacebook" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
+      <option name="METHOD_NAME" value="verifyItemRemovalFromMainPage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -150,7 +175,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu_and_Icons.Clickontwitter" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Login_and_Logout.TestLogin" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -159,26 +184,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Menu_and_Icons" />
-      <option name="METHOD_NAME" value="Clickontwitter" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Menu_and_Icons.clickAbout" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Menu_and_Icons" />
-      <option name="METHOD_NAME" value="clickAbout" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Login_and_Logout" />
+      <option name="METHOD_NAME" value="TestLogin" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -187,19 +194,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.Menu_and_Icons.ClickonLinkedIn" />
-      <item itemvalue="TestNG.Menu_and_Icons.Clickonfacebook" />
-      <item itemvalue="TestNG.Menu_and_Icons.ClickAllItems" />
-      <item itemvalue="TestNG.Menu_and_Icons.Clickontwitter" />
-      <item itemvalue="TestNG.Menu_and_Icons.clickAbout" />
+      <item itemvalue="TestNG.Cart_and_Checkout" />
+      <item itemvalue="TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart" />
+      <item itemvalue="TestNG.Cart_and_Checkout.verifyItemRemovalFromCartPage" />
+      <item itemvalue="TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage" />
+      <item itemvalue="TestNG.Login_and_Logout.TestLogin" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Menu_and_Icons.ClickonLinkedIn" />
-        <item itemvalue="TestNG.Menu_and_Icons.Clickonfacebook" />
-        <item itemvalue="TestNG.Menu_and_Icons.Clickontwitter" />
-        <item itemvalue="TestNG.Menu_and_Icons.clickAbout" />
-        <item itemvalue="TestNG.Menu_and_Icons.ClickAllItems" />
+        <item itemvalue="TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart" />
+        <item itemvalue="TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage" />
+        <item itemvalue="TestNG.Cart_and_Checkout" />
+        <item itemvalue="TestNG.Cart_and_Checkout.verifyItemRemovalFromCartPage" />
+        <item itemvalue="TestNG.Login_and_Logout.TestLogin" />
       </list>
     </recent_temporary>
   </component>
