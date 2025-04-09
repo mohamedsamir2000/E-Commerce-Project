@@ -74,7 +74,7 @@ public class HomePage {
     public  void clickAllAddToCartButtons() {
         List<WebElement> addButtons = driver.findElements(addToCartButtons);
 
-        System.out.println("Total Add to Cart buttons found: " + addButtons.size());
+        //System.out.println("Total Add to Cart buttons found: " + addButtons.size());
 
         for (WebElement button : addButtons) {
             button.click();
@@ -83,7 +83,7 @@ public class HomePage {
     public  void clickAllRemoveButtons() {
         List<WebElement> removeButtonsList = driver.findElements(removeButtons);
 
-        System.out.println("Total Add to Cart buttons found: " + removeButtonsList.size());
+        //System.out.println("Total Add to Cart buttons found: " + removeButtonsList.size());
 
         for (WebElement button : removeButtonsList) {
             button.click();

@@ -30,31 +30,37 @@ public class Shopping_Items extends TestBase{
         homePage.ClickOn(homePage.Facebook_btn);
 
 
-
-
-
-
-
     }
+    //test that all items in home page can add it to cart then remove them
     @Test(dataProvider = "loginData")
     public void AddAllItemsonCart(String username, String password){
         loginPage = new LoginPage(base_driver);
         homePage = new HomePage(base_driver);
 
-
+     //login
         loginPage.setUsername(username);
         loginPage.setPassword(password);
         loginPage.clickonlogin();
+        //check if home page was displayed
         System.out.println(homePage.isInventoryDisplayed());
+        //get count of all items in the page
         int ItemCount=homePage.getInventoryItemCount();
-        System.out.println("number of items in page to add to cart"+ItemCount);
+        //System.out.println("number of items in page to add to cart"+ItemCount);
+        //then add all items in cart
         homePage.clickAllAddToCartButtons();
+        //get count of remove buttons remo
        int RemoveButtons= homePage.getRemoveButtonsCount();
-        System.out.println("number of items i can remove after added it to cart "+RemoveButtons);
+        //System.out.println("number of items i can remove after added it to cart "+RemoveButtons);
+        //check that all items added to cart
         Assert.assertEquals(RemoveButtons,ItemCount,"not all items added ");
+        //get cart count
        int CartItemsCount=homePage.getCartItemCount();
+       //check that cart count equal items count that added to cart
        Assert.assertEquals(CartItemsCount,RemoveButtons,"Cart count not correct");
+       //then remove all items
        homePage.clickAllRemoveButtons();
+        System.out.println(homePage.getCartItemCount()+"cart count");
+        //check that all items removed from cart
        Assert.assertEquals(CartItemsCount,RemoveButtons,"can't remove all added items to cart");
 
     }
@@ -63,15 +69,18 @@ public class Shopping_Items extends TestBase{
     public void testAddToCartFromProductDetails(String username, String password) {
         homePage = new HomePage(base_driver);
         loginPage = new LoginPage(base_driver);
-
+      //login
         loginPage.setUsername(username);
         loginPage.setPassword(password);
         loginPage.clickonlogin();
+        //get all xpaths for all items
         String[] Allxpaths={"//*[@id=\"item_4_title_link\"]/div","//*[@id=\"item_0_title_link\"]/div","//*[@id=\"item_1_title_link\"]/div","//*[@id=\"item_5_title_link\"]/div","//*[@id=\"item_2_title_link\"]/div","//*[@id=\"item_3_title_link\"]/div"};
+       // go to each item and open it then click on add to cart button
         for(int i=0;i<Allxpaths.length;i++){
             homePage.AddItemtoCart(Allxpaths[i]);
             homePage.CLickAddtoCartAndBack();
         }
+        //get cart count after add all items to cart
         int CartItemsCount=homePage.getCartItemCount();
         Assert.assertEquals(CartItemsCount,Allxpaths.length,"Cart count not correct");
         //Test to open all product again and remove them again
@@ -82,18 +91,22 @@ public class Shopping_Items extends TestBase{
         //get items count afterRemove all products
         int AfterCartItemsCount=homePage.getCartItemCount();
         System.out.println(AfterCartItemsCount);
+        //check that cart count return to 0 again
         Assert.assertEquals(0,AfterCartItemsCount,"Cart count not correct");
 
     }
+    //test items names that are correct to user
     @Test(dataProvider = "loginData")
     public void CheckItemsNames (String username, String password) {
         homePage = new HomePage(base_driver);
         loginPage = new LoginPage(base_driver);
-
+     //login
         loginPage.setUsername(username);
         loginPage.setPassword(password);
         loginPage.clickonlogin();
+        //get list of  items names
         List<String> ItemsNames=homePage.getItemsName();
+        //regex test
         Pattern digit = Pattern.compile("[0-9]");
         Pattern special = Pattern.compile ("[!@#$%&*()+=|<>?{}\\[\\]~]");
         int ActualCount=0;
@@ -116,6 +129,7 @@ public class Shopping_Items extends TestBase{
          Assert.assertEquals(ActualCount,ExpectedCount,"there is error in names of items");
 
         }
+        // check can open cart page
     @Test(dataProvider = "loginData")
     public void CheckCartItemIsOpen (String username, String password) {
         homePage = new HomePage(base_driver);

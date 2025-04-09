@@ -4,95 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="java documentation added">
-      <change afterPath="$PROJECT_DIR$/target/javadoc-bundle-options/javadoc-options-javadoc-resources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-javadoc-plugin-stale-data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Pages/CartPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Pages/HomePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Pages/LoginPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Pages/class-use/CartPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Pages/class-use/HomePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Pages/class-use/LoginPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Pages/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Pages/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Pages/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/Cart_and_Checkout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/Login_and_Logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/Menu_and_Icons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/Shopping_Items.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/Sort.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/TestBase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/class-use/Cart_and_Checkout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/class-use/Login_and_Logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/class-use/Menu_and_Icons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/class-use/Shopping_Items.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/class-use/Sort.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/class-use/TestBase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/TestCases/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Utility/ExcelUtils.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Utility/class-use/ExcelUtils.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Utility/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Utility/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/Utility/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/allclasses-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/allpackages-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/element-list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/help-doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/index-all.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/legal/ADDITIONAL_LICENSE_INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/legal/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/legal/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/legal/dejavufonts.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/legal/jquery.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/legal/jqueryUI.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/member-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/module-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/overview-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/overview-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/package-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/copy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSans-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSans-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSans-BoldOblique.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSans-BoldOblique.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSans-Oblique.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSans-Oblique.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSans.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSans.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSansMono-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSansMono-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSansMono-BoldOblique.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSansMono-BoldOblique.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSansMono-Oblique.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSansMono-Oblique.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSansMono.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSansMono.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSerif-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSerif-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSerif-BoldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSerif-BoldItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSerif-Italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSerif-Italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSerif.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/DejaVuLGCSerif.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/fonts/dejavu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/glass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/link.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/resource-files/x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/script-files/jquery-3.7.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/script-files/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/script-files/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/script-files/search-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/script-files/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/tag-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/site/apidocs/type-search-index.js" afterDir="false" />
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="cartpage update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +39,7 @@
     <setting file="file://$PROJECT_DIR$/src/test/java/TestCases/Sort.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -408,15 +322,7 @@
       <option name="project" value="LOCAL" />
       <updated>1744220367778</updated>
     </task>
-    <task id="LOCAL-00014" summary="java documentation added">
-      <option name="closed" value="true" />
-      <created>1744236518939</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1744236518939</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -439,8 +345,7 @@
     <MESSAGE value="Shopping_Items update for product details page" />
     <MESSAGE value="Menu and Icons" />
     <MESSAGE value="cartpage update" />
-    <MESSAGE value="java documentation added" />
-    <option name="LAST_COMMIT_MESSAGE" value="java documentation added" />
+    <option name="LAST_COMMIT_MESSAGE" value="cartpage update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
