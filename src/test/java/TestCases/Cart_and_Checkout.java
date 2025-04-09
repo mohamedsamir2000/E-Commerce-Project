@@ -128,6 +128,7 @@ public class Cart_and_Checkout extends TestBase {
 
         System.out.println("✅ All items were successfully removed from the cart for user: " + username);
     }
+    //checkout process is successfule
     @Test(dataProvider = "loginData")
     public void TestCheckoutProcess(String username, String password) {
         WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(5));
@@ -148,6 +149,86 @@ public class Cart_and_Checkout extends TestBase {
         cartPage.clickFinish();
         String message = cartPage.getSuccessMessage();
         Assert.assertEquals(message, "Thank you for your order!");
+    }
+    //checkout with empty fields
+    @Test(dataProvider = "loginData")
+    public void testCheckoutWithEmptyFields(String username, String password) {
+        WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(5));
+        loginPage = new LoginPage(base_driver);
+        homePage = new HomePage(base_driver);
+        cartPage = new CartPage(base_driver);
+
+        // Login
+        loginPage.setUsername(username);
+        loginPage.setPassword(password);
+        loginPage.clickonlogin();
+        // add some items to checkout
+        cartPage.ClickOn(By.id("add-to-cart-sauce-labs-backpack"));
+        cartPage.ClickOn(By.id("add-to-cart-sauce-labs-bike-light"));
+        cartPage.ClickOn(By.className("shopping_cart_link"));
+        cartPage.clickCheckout();
+
+        // Leave fields empty and click Continue
+        cartPage.fillCheckoutInfo("", "", "");
+        cartPage.clickContinue();
+
+        // Verify error message
+        String error = cartPage.getErrorMessage();
+        Assert.assertEquals(error, "Error: First Name is required", "Expected error for empty first name");
+    }
+    //check total price for user order is correct calculated
+    @Test(dataProvider = "loginData")
+    public void testCheckoutTotalIsCorrect(String username, String password) {
+        WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(5));
+        loginPage = new LoginPage(base_driver);
+        homePage = new HomePage(base_driver);
+        cartPage = new CartPage(base_driver);
+
+        // Login
+        loginPage.setUsername(username);
+        loginPage.setPassword(password);
+        loginPage.clickonlogin();
+        // add some items to checkout
+        cartPage.ClickOn(By.id("add-to-cart-sauce-labs-backpack"));
+        cartPage.ClickOn(By.id("add-to-cart-sauce-labs-bike-light"));
+        cartPage.ClickOn(By.className("shopping_cart_link"));
+        cartPage.clickCheckout();
+
+        // Enter valid data to continue
+        cartPage.fillCheckoutInfo("Test", "Total", "12345");
+        cartPage.clickContinue();
+        // Validate prices and check the total price is correct
+        List<Double> itemPrices = cartPage.getItemPrices();
+        double expectedItemTotal = itemPrices.stream().mapToDouble(Double::doubleValue).sum();
+        double displayedItemTotal = cartPage.getItemTotal();
+        double displayedTax = cartPage.getTax();
+        double displayedTotal = cartPage.getTotal();
+        Assert.assertEquals(displayedItemTotal, expectedItemTotal, "Item total mismatch");
+        Assert.assertEquals(displayedItemTotal + displayedTax, displayedTotal, "Total does not match item total + tax");
+
+    }
+    //check user can back to home page from cart page
+    @Test(dataProvider = "loginData")
+    public void testBackToInventoryFromCart(String username, String password) {
+        WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(5));
+        loginPage = new LoginPage(base_driver);
+        homePage = new HomePage(base_driver);
+        cartPage = new CartPage(base_driver);
+
+        // Login
+        loginPage.setUsername(username);
+        loginPage.setPassword(password);
+        loginPage.clickonlogin();
+        // add some items to checkout
+        cartPage.ClickOn(By.id("add-to-cart-sauce-labs-backpack"));
+        cartPage.ClickOn(By.id("add-to-cart-sauce-labs-bike-light"));
+        cartPage.ClickOn(By.className("shopping_cart_link"));
+        // Click Continue Shopping
+        cartPage.clickContinueShopping();
+
+        // Verify we're back on the inventory page
+        String currentUrl = base_driver.getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains("inventory"), "User is not back on the inventory page");
     }
 
 }

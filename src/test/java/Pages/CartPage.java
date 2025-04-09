@@ -25,6 +25,11 @@ public class CartPage {
     public By CancelButton=By.id("cancel");
     public By FinishButton=By.id("finish");
     private By successMessage = By.className("complete-header");
+    private By errorMsg = By.cssSelector("h3[data-test='error']");
+    private By itemPrices = By.className("inventory_item_price");
+    private By itemTotalLabel = By.className("summary_subtotal_label");
+    private By taxLabel = By.className("summary_tax_label");
+    private By totalLabel = By.className("summary_total_label");
 
 
     // Locator for the cart item
@@ -44,11 +49,20 @@ public class CartPage {
     public void clickCheckout() {
         driver.findElement(CheckoutButton).click();
     }
+    //click continue shopping
+    public void clickContinueShopping() {
+        driver.findElement(ContinueShoppingButton).click();
+    }
     //fill checkout form info
     public void fillCheckoutInfo(String firstName, String lastName, String zip) {
         driver.findElement(FirstNameinput).sendKeys(firstName);
         driver.findElement(LastNameinput).sendKeys(lastName);
         driver.findElement(PostalCode).sendKeys(zip);
+    }
+
+
+    public String getErrorMessage() {
+        return driver.findElement(errorMsg).getText();
     }
 
     public void clickContinue() {
@@ -61,7 +75,25 @@ public class CartPage {
     public String getSuccessMessage() {
         return driver.findElement(successMessage).getText();
     }
+    public List<Double> getItemPrices() {
+        return driver.findElements(itemPrices).stream()
+                .map(e -> Double.parseDouble(e.getText().replace("$", "")))
+                .toList();
+    }
 
+    public double getItemTotal() {
+        String text = driver.findElement(itemTotalLabel).getText(); // "Item total: $39.98"
+        return Double.parseDouble(text.replace("Item total: $", ""));
+    }
+
+    public double getTax() {
+        String text = driver.findElement(taxLabel).getText(); // "Tax: $3.20"
+        return Double.parseDouble(text.replace("Tax: $", ""));
+    }
+    public double getTotal() {
+        String text = driver.findElement(totalLabel).getText(); // "Total: $43.18"
+        return Double.parseDouble(text.replace("Total: $", ""));
+    }
     //for WebElements
     public void ClickOn(WebElement button) {
 
