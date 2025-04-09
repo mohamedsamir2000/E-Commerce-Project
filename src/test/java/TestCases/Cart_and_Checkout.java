@@ -128,8 +128,27 @@ public class Cart_and_Checkout extends TestBase {
 
         System.out.println("✅ All items were successfully removed from the cart for user: " + username);
     }
+    @Test(dataProvider = "loginData")
+    public void TestCheckoutProcess(String username, String password) {
+        WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(5));
+        loginPage = new LoginPage(base_driver);
+        homePage = new HomePage(base_driver);
+        cartPage = new CartPage(base_driver);
 
-
+        // Login
+        loginPage.setUsername(username);
+        loginPage.setPassword(password);
+        loginPage.clickonlogin();
+        cartPage.ClickOn(By.id("add-to-cart-sauce-labs-backpack"));
+        cartPage.ClickOn(By.id("add-to-cart-sauce-labs-bike-light"));
+        cartPage.ClickOn(By.className("shopping_cart_link"));
+        cartPage.clickCheckout();
+        cartPage.fillCheckoutInfo("marwa", "Ashraf", "12345");
+        cartPage.clickContinue();
+        cartPage.clickFinish();
+        String message = cartPage.getSuccessMessage();
+        Assert.assertEquals(message, "Thank you for your order!");
+    }
 
 }
 
