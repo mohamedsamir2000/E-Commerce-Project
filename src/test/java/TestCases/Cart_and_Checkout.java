@@ -247,7 +247,7 @@ public class Cart_and_Checkout extends TestBase {
     }
     //checkout process is successfule
     @Test(dataProvider = "loginData")
-    public void TestCheckoutProcess(String username, String password) {
+    public void TC_24_TestCheckoutProcess(String username, String password) {
         WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(5));
         loginPage = new LoginPage(base_driver);
         homePage = new HomePage(base_driver);
@@ -269,7 +269,7 @@ public class Cart_and_Checkout extends TestBase {
     }
     //checkout with empty fields
     @Test(dataProvider = "loginData")
-    public void testCheckoutWithEmptyFields(String username, String password) {
+    public void TC_26_testCheckoutWithEmptyFields(String username, String password) {
         WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(5));
         loginPage = new LoginPage(base_driver);
         homePage = new HomePage(base_driver);
@@ -295,7 +295,7 @@ public class Cart_and_Checkout extends TestBase {
     }
     //check total price for user order is correct calculated
     @Test(dataProvider = "loginData")
-    public void testCheckoutTotalIsCorrect(String username, String password) {
+    public void TC_25_testCheckoutTotalIsCorrect(String username, String password) {
         WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(5));
         loginPage = new LoginPage(base_driver);
         homePage = new HomePage(base_driver);
