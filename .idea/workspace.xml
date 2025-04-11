@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="testing.xml added">
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="Menu and Icons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +30,12 @@
     &quot;assignee&quot;: &quot;mohamedsamir2000&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/mohamedsamir2000/E-Commerce-Project.git&quot;,
-    &quot;accountId&quot;: &quot;6fc972bc-05b4-4dee-9be2-4edf40d67fe1&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/mohamedsamir2000/E-Commerce-Project.git",
+    "accountId": "fccd3e08-dcd9-42ba-94bc-83fbd68c1c5b"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/java/TestCases/Sort.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -52,63 +51,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "TestNG./Users/mohamednassar/IdeaProjects/E-Commerce-Project/testng.xml.executor": "Run",
-    "TestNG.Cart_and_Checkout.TC_14_Verify_a_single_item_can_be_removed_from_the_cart_page.executor": "Run",
-    "TestNG.Cart_and_Checkout.TC_15_Verify_a_single_item_can_be_removed_from_the_main_page.executor": "Run",
-    "TestNG.Cart_and_Checkout.TC_15_Verify_each_single_item_can_be_added_and_removed_from_the_home_page.executor": "Run",
-    "TestNG.Cart_and_Checkout.TC_17_Verify_all_items_can_be_removed_from_the_main_page.executor": "Run",
-    "TestNG.Cart_and_Checkout.TC_Verify_all_items_can_be_added_and_removed_from_cart.executor": "Run",
-    "TestNG.Cart_and_Checkout.TC_Verify_all_items_can_be_added_and_removed_from_home_page.executor": "Run",
-    "TestNG.Cart_and_Checkout.TC_Verify_each_item_can_be_added_from_home_and_removed_from_cart.executor": "Run",
-    "TestNG.Cart_and_Checkout.executor": "Run",
-    "TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart.executor": "Run",
-    "TestNG.Cart_and_Checkout.verifyItemRemovalFromCartPage.executor": "Run",
-    "TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage.executor": "Debug",
-    "TestNG.LoginTestCase.executor": "Run",
-    "TestNG.Login_and_Logout.TestLogin.executor": "Run",
-    "TestNG.Login_and_Logout.TestLogout.executor": "Run",
-    "TestNG.Login_and_Logout.executor": "Run",
-    "TestNG.Menu_and_Icons.ClickAllItems.executor": "Run",
-    "TestNG.Menu_and_Icons.ClickonLinkedIn.executor": "Run",
-    "TestNG.Menu_and_Icons.Clickonfacebook.executor": "Run",
-    "TestNG.Menu_and_Icons.Clickontwitter.executor": "Run",
-    "TestNG.Menu_and_Icons.Test.executor": "Run",
-    "TestNG.Menu_and_Icons.Testaddtocart.executor": "Run",
-    "TestNG.Menu_and_Icons.clickAbout.executor": "Run",
-    "TestNG.Menu_and_Icons.clickRestappstate.executor": "Run",
-    "TestNG.Menu_and_Icons.clickabout.executor": "Debug",
-    "TestNG.Menu_and_Icons.executor": "Run",
-    "TestNG.ScreenshotTest (1).executor": "Run",
-    "TestNG.ScreenshotTest.executor": "Run",
-    "TestNG.ScreenshotTest.testScreenshotCapture (1).executor": "Run",
-    "TestNG.ScreenshotTest.testScreenshotCapture.executor": "Run",
-    "TestNG.Shopping_Items.CheckItemsNames.executor": "Run",
-    "TestNG.Shopping_Items.Test.executor": "Run",
-    "TestNG.Shopping_Items.executor": "Run",
-    "TestNG.Shopping_Items.testAddToCartFromProductDetails.executor": "Run",
-    "TestNG.Sort.NameAtoZ.executor": "Run",
-    "TestNG.Sort.NameZtoA.executor": "Run",
-    "TestNG.Sort.PriceLowToHigh.executor": "Run",
-    "TestNG.Sort.executor": "Run",
-    "TestNG.TestCases (1).executor": "Run",
-    "TestNG.TestCases.executor": "Run",
-    "TestNG.TestClass.executor": "Run",
-    "TestNG.test.executor": "Run",
-    "TestNG.test.testScreenshotCapture.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/test/java/TestCases",
-    "onboarding.tips.debug.path": "/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;TestNG.Cart_and_Checkout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Cart_and_Checkout.verifyItemRemovalFromCartPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage.executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.LoginTestCase.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Login_and_Logout.TestLogin.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Login_and_Logout.TestLogout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Login_and_Logout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu_and_Icons.ClickAllItems.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu_and_Icons.ClickonLinkedIn.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu_and_Icons.Clickonfacebook.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu_and_Icons.Clickontwitter.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu_and_Icons.Test.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu_and_Icons.Testaddtocart.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu_and_Icons.clickAbout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu_and_Icons.clickRestappstate.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Menu_and_Icons.clickabout.executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.Menu_and_Icons.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Shopping_Items.CheckItemsNames.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Shopping_Items.Test.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Shopping_Items.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Shopping_Items.testAddToCartFromProductDetails.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Sort.NameAtoZ.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Sort.NameZtoA.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Sort.PriceLowToHigh.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Sort.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestCases (1).executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestCases.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.test.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/test/java/TestCases&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/mohamednassar/IdeaProjects/E-Commerce Project/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/TestCases" />
@@ -119,8 +104,8 @@
       <recent name="$PROJECT_DIR$/src/test/java/Utility" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Sort">
-    <configuration name="ScreenshotTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.Shopping_Items.Test">
+    <configuration name="Cart_and_Checkout" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -129,7 +114,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.ScreenshotTest" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -137,18 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScreenshotTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ScreenshotTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Sort" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
         <pattern>
@@ -157,42 +131,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Sort" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestClass" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.TestClass" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test.testScreenshotCapture" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.test" />
-      <option name="METHOD_NAME" value="testScreenshotCapture" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
+      <option name="METHOD_NAME" value="verifyAllItemsCanBeRemovedFromCart" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -200,20 +140,72 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Cart_and_Checkout.verifyItemRemovalFromMainPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
+      <option name="METHOD_NAME" value="verifyItemRemovalFromMainPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Shopping_Items.Test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Shopping_Items" />
+      <option name="METHOD_NAME" value="Test" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCases" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="TestNG.ScreenshotTest" />
-      <item itemvalue="TestNG.ScreenshotTest (1)" />
-      <item itemvalue="TestNG.Sort" />
-      <item itemvalue="TestNG.TestClass" />
-      <item itemvalue="TestNG.test.testScreenshotCapture" />
+      <item itemvalue="TestNG.Shopping_Items.Test" />
+      <item itemvalue="TestNG.TestCases" />
+      <item itemvalue="TestNG.Cart_and_Checkout" />
+      <item itemvalue="TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart" />
+      <item itemvalue="TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Sort" />
-        <item itemvalue="TestNG.TestClass" />
-        <item itemvalue="TestNG.test.testScreenshotCapture" />
-        <item itemvalue="TestNG.ScreenshotTest (1)" />
-        <item itemvalue="TestNG.ScreenshotTest" />
+        <item itemvalue="TestNG.Shopping_Items.Test" />
+        <item itemvalue="TestNG.TestCases" />
+        <item itemvalue="TestNG.Cart_and_Checkout.verifyAllItemsCanBeRemovedFromCart" />
+        <item itemvalue="TestNG.Cart_and_Checkout.verifyItemRemovalFromMainPage" />
+        <item itemvalue="TestNG.Cart_and_Checkout" />
       </list>
     </recent_temporary>
   </component>
@@ -314,47 +306,7 @@
       <option name="project" value="LOCAL" />
       <updated>1744003217227</updated>
     </task>
-    <task id="LOCAL-00012" summary="cartpage update">
-      <option name="closed" value="true" />
-      <created>1744220332511</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1744220332511</updated>
-    </task>
-    <task id="LOCAL-00013" summary="cartpage update">
-      <option name="closed" value="true" />
-      <created>1744220367778</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1744220367778</updated>
-    </task>
-    <task id="LOCAL-00014" summary="testing.xml added">
-      <option name="closed" value="true" />
-      <created>1744392666572</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1744392666572</updated>
-    </task>
-    <task id="LOCAL-00015" summary="testing.xml added">
-      <option name="closed" value="true" />
-      <created>1744392718443</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1744392718443</updated>
-    </task>
-    <task id="LOCAL-00016" summary="testing.xml added">
-      <option name="closed" value="true" />
-      <created>1744393097348</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1744393097349</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -376,10 +328,7 @@
     <MESSAGE value="LoginDataTestCases.xlsx updated&#10;Login_and_Logout.java updated" />
     <MESSAGE value="Shopping_Items update for product details page" />
     <MESSAGE value="Menu and Icons" />
-    <MESSAGE value="Add files via upload" />
-    <MESSAGE value="cartpage update" />
-    <MESSAGE value="testing.xml added" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing.xml added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu and Icons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

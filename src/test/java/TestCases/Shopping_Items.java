@@ -16,21 +16,6 @@ public class Shopping_Items extends TestBase{
     LoginPage loginPage;
 
 
-
-    @Test(dataProvider = "loginData")
-    public void Test(String username, String password){
-        loginPage = new LoginPage(base_driver);
-        homePage = new HomePage(base_driver);
-
-
-        loginPage.setUsername(username);
-        loginPage.setPassword(password);
-        loginPage.clickonlogin();
-
-        homePage.ClickOn(homePage.Facebook_btn);
-
-
-    }
     //test that all items in home page can add it to cart then remove them
     @Test(dataProvider = "loginData")
     public void AddAllItemsonCart(String username, String password){
