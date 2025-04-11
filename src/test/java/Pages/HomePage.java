@@ -180,30 +180,6 @@ public class HomePage {
         return extractedNames.equals(expectedSortedNames);
     }
 
-//    public List<String> ListOfItems_NameAtoZ() {
-//        List<String> items = new ArrayList<>();
-//        items.add("Sauce Labs Backpack");
-//        items.add("Sauce Labs Bike Light");
-//        items.add("Sauce Labs Bolt T-Shirt");
-//        items.add("Sauce Labs Fleece Jacket");
-//        items.add("Sauce Labs Onesie");
-//        items.add("Test.allTheThings() T-Shirt (Red)");
-//
-//        return items;
-//    }
-
-//    public List<String> ListOfItems_NameZtoA() {
-//        List<String> items = new ArrayList<>();
-//        items.add("Test.allTheThings() T-Shirt (Red)");
-//        items.add("Sauce Labs Onesie");
-//        items.add("Sauce Labs Fleece Jacket");
-//        items.add("Sauce Labs Bolt T-Shirt");
-//        items.add("Sauce Labs Bike Light");
-//        items.add("Sauce Labs Backpack");
-//
-//        return items;
-//    }
-
 
     public boolean verifySortingByPrice(int sortIndex) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));

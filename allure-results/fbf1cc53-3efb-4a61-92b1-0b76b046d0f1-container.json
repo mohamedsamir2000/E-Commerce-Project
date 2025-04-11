@@ -1,1 +1,0 @@
-{"uuid":"fbf1cc53-3efb-4a61-92b1-0b76b046d0f1","name":"TestCases.Menu_and_Icons.setup","children":["41de7774-5efa-41cb-8946-8d67628deb59"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1743855306640,"stop":1743855306648}],"afters":[],"start":1743855306640,"stop":1743855306648}
