@@ -2,9 +2,13 @@ package TestCases;
 
 import Utility.ExcelUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
@@ -75,8 +79,28 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void AfterMethod() {
+    public void AfterMethod(ITestResult result) {
+        if (ITestResult.FAILURE == result.getStatus()) {
+            System.out.println("Test failed, attaching screenshot...");
+            saveScreenshot(base_driver);
+        } else {
+            System.out.println("Test passed, no screenshot attached.");
+        }
 
-        base_driver.quit();
+        if (base_driver != null) {
+            base_driver.quit();
+        }
+    }
+
+
+    @Attachment(value = "Failure Screenshot", type = "image/png")
+    public byte[] saveScreenshot(WebDriver driver) {
+        try {
+            // Wait for the page to load completely before taking the screenshot
+            return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

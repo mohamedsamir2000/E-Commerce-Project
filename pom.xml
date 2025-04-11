@@ -51,6 +51,8 @@
             <version>2.29.1</version>
         </dependency>
 
+
+
         <!-- WebDriverManager -->
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
@@ -75,7 +77,6 @@
                     <show>private</show> <!-- Include everything -->
                 </configuration>
             </plugin>
-
 
 
 

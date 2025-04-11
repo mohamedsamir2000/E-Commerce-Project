@@ -19,114 +19,231 @@ public class Cart_and_Checkout extends TestBase {
     CartPage cartPage;
 
     @Test(dataProvider = "loginData")
-    public void verifyItemRemovalFromCartPage(String username, String password) {
+    public void TC_14_Verify_a_single_item_can_be_removed_from_the_cart_page(String username, String password) {
         loginPage = new LoginPage(base_driver);
         homePage = new HomePage(base_driver);
         cartPage = new CartPage(base_driver);
-
-        // Login
-        loginPage.setUsername(username);
-        loginPage.setPassword(password);
-        loginPage.clickonlogin();
-
-        // Step 2: Add an item to the cart using the button's id
         WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(10));
-        WebElement addItemButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("add-to-cart-sauce-labs-backpack")));
-        addItemButton.click();
 
-        // Step 3: Navigate to the cart
-        base_driver.findElement(By.className("shopping_cart_link")).click();
-
-        // Step 4: Verify cart has at least one item before removal
-        Assert.assertTrue(cartPage.isItemInCart(), "Cart is empty, cannot remove an item.");
-
-        // Step 5: Click on 'Remove' button for the first item
-        Assert.assertTrue(cartPage.removeSingleItemFromCart(), "Item was not removed from the cart.");
-
-        // Step 6: Verify cart is empty after removal
-        Assert.assertFalse(cartPage.isItemInCart(), "Item was not successfully removed from the cart.");
-    }
-
-    @Test(dataProvider = "loginData")
-    public void verifyItemRemovalFromMainPage(String username, String password) {
-        loginPage = new LoginPage(base_driver);
-        homePage = new HomePage(base_driver);
-        cartPage = new CartPage(base_driver);
-
-        // Login
+        // Step 1: Login
         loginPage.setUsername(username);
         loginPage.setPassword(password);
         loginPage.clickonlogin();
 
-        // Step 2: Wait for the page to load and the 'Add to Cart' button to appear
-        WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(20)); // Increased timeout
-        WebElement addToCartButton = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']"))); // Use XPath for a more reliable locator
+        // Step 2: List of all item identifiers
+        String[] itemDataTests = {
+                "sauce-labs-backpack",
+                "sauce-labs-bike-light",
+                "sauce-labs-bolt-t-shirt",
+                "sauce-labs-fleece-jacket",
+                "sauce-labs-onesie",
+                "test.allthethings()-t-shirt-(red)"
+        };
 
-        // Step 3: Click the 'Add to Cart' button
-        addToCartButton.click();
-
-        // Optional: Verify if the item is added to the cart (check cart icon)
-        WebElement cartIcon = base_driver.findElement(By.className("shopping_cart_link"));
-        cartIcon.click();
-
-        // Verify item in the cart
-        WebElement cartItem = base_driver.findElement(By.xpath("//div[@class='cart_item']"));
-        Assert.assertNotNull(cartItem, "Item not added to cart.");
-
-
-
-    }
-
-    @Test(dataProvider = "loginData")
-    public void verifyAllItemsCanBeRemovedFromCart(String username, String password) {
-        WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(5));
-        loginPage = new LoginPage(base_driver);
-        homePage = new HomePage(base_driver);
-        cartPage = new CartPage(base_driver);
-
-        // Login
-        loginPage.setUsername(username);
-        loginPage.setPassword(password);
-        loginPage.clickonlogin();
-
-
-        // Step 3: Add all items to the cart
-        List<WebElement> addToCartButtons = base_driver.findElements(By.cssSelector(".inventory_item button"));
-        for (WebElement button : addToCartButtons) {
+        // Step 3: Iterate through items
+        for (String item : itemDataTests) {
             try {
-                button.click();
+                // Add item from home page
+                String addButtonSelector = String.format("*[data-test=\"add-to-cart-%s\"]", item);
+                WebElement addButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(addButtonSelector)));
+                addButton.click();
+
+                // Confirm item added (check for remove button)
+                String removeButtonSelector = String.format("*[data-test=\"remove-%s\"]", item);
+                WebElement removeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(removeButtonSelector)));
+                Assert.assertTrue(removeBtn.isDisplayed(), item + " was not added to the cart.");
+
+                // Navigate to cart
+                base_driver.findElement(By.className("shopping_cart_link")).click();
+
+                // Remove item from cart page
+                WebElement removeFromCart = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(removeButtonSelector)));
+                removeFromCart.click();
+
+                // Confirm removal (remove button disappears)
+                List<WebElement> remaining = base_driver.findElements(By.cssSelector(removeButtonSelector));
+                Assert.assertTrue(remaining.isEmpty(), item + " was not removed from the cart.");
+
+                // Go back to home page for next item
+                base_driver.findElement(By.id("continue-shopping")).click();
+
             } catch (Exception e) {
-                System.out.println("Could not click button: " + e.getMessage());
+                Assert.fail("Error while processing item: " + item + ". Error: " + e.getMessage());
+            }
+        }
+    }
+
+    @Test(dataProvider = "loginData")
+    public void TC_15_Verify_a_single_item_can_be_removed_from_the_main_page(String username, String password) {
+        loginPage = new LoginPage(base_driver);
+        homePage = new HomePage(base_driver);
+
+        // Step 1: Login
+        loginPage.setUsername(username);
+        loginPage.setPassword(password);
+        loginPage.clickonlogin();
+
+        // Step 2: List of all item identifiers
+        String[] itemDataTests = {
+                "sauce-labs-backpack",
+                "sauce-labs-bike-light",
+                "sauce-labs-bolt-t-shirt",
+                "sauce-labs-fleece-jacket",
+                "sauce-labs-onesie",
+                "test.allthethings()-t-shirt-(red)"
+        };
+
+        WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(10));
+
+        // Step 3: Add all items to the cart and verify
+        for (String item : itemDataTests) {
+            try {
+                String addButtonSelector = String.format("*[data-test=\"add-to-cart-%s\"]", item);
+                WebElement addButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(addButtonSelector)));
+                addButton.click();
+
+                String removeButtonSelector = String.format("*[data-test=\"remove-%s\"]", item);
+                WebElement removeButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(removeButtonSelector)));
+                Assert.assertTrue(removeButton.isDisplayed(), item + " was not added to the cart.");
+            } catch (Exception e) {
+                Assert.fail("Failed to add item: " + item + ". Error: " + e.getMessage());
             }
         }
 
-        // Step 4: Go to cart
-        base_driver.findElement(By.className("shopping_cart_link")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("cart_list")));
+        // Step 4: Remove all items from the cart and verify
+        for (String item : itemDataTests) {
+            try {
+                String removeButtonSelector = String.format("*[data-test=\"remove-%s\"]", item);
+                WebElement removeButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(removeButtonSelector)));
+                removeButton.click();
 
-        // Step 5: Remove each item one by one
-        while (true) {
-            List<WebElement> cartItems = base_driver.findElements(By.className("cart_item"));
-            int itemsBefore = cartItems.size();
+                String addButtonSelector = String.format("*[data-test=\"add-to-cart-%s\"]", item);
+                WebElement addButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(addButtonSelector)));
+                Assert.assertTrue(addButton.isDisplayed(), item + " was not removed from the cart.");
+            } catch (Exception e) {
+                Assert.fail("Failed to remove item: " + item + ". Error: " + e.getMessage());
+            }
+        }
+    }
 
-            if (itemsBefore == 0) break; // All items removed
+    @Test(dataProvider = "loginData")
+    public void TC_16_Verify_all_items_can_be_removed_from_the_cart_page(String username, String password) {
+        loginPage = new LoginPage(base_driver);
+        homePage = new HomePage(base_driver);
+        cartPage = new CartPage(base_driver);
+        WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(10));
 
-            WebElement firstRemoveButton = cartItems.get(0).findElement(By.tagName("button"));
-            firstRemoveButton.click();
+        // Step 1: Login
+        loginPage.setUsername(username);
+        loginPage.setPassword(password);
+        loginPage.clickonlogin();
 
-            // Wait until the cart updates
-            wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.className("cart_item"), itemsBefore));
+        // Step 2: List of all item identifiers
+        String[] itemDataTests = {
+                "sauce-labs-backpack",
+                "sauce-labs-bike-light",
+                "sauce-labs-bolt-t-shirt",
+                "sauce-labs-fleece-jacket",
+                "sauce-labs-onesie",
+                "test.allthethings()-t-shirt-(red)"
+        };
 
-            int itemsAfter = base_driver.findElements(By.className("cart_item")).size();
-            Assert.assertEquals(itemsAfter, itemsBefore - 1, "Item was not removed successfully.");
+        // Step 3: Add all items to the cart from Home Page
+        for (String item : itemDataTests) {
+            try {
+                String addButtonSelector = String.format("*[data-test=\"add-to-cart-%s\"]", item);
+                WebElement addButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(addButtonSelector)));
+                addButton.click();
+
+                // Confirm item is added
+                String removeButtonSelector = String.format("*[data-test=\"remove-%s\"]", item);
+                WebElement removeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(removeButtonSelector)));
+                Assert.assertTrue(removeBtn.isDisplayed(), item + " was not added to the cart.");
+
+            } catch (Exception e) {
+                Assert.fail("Failed to add item: " + item + ". Error: " + e.getMessage());
+            }
         }
 
-        // Final assertion: cart should be empty
-        List<WebElement> finalItems = base_driver.findElements(By.className("cart_item"));
-        Assert.assertEquals(finalItems.size(), 0, "Cart is not empty after removing all items.");
+        // Step 4: Navigate to Cart Page once
+        base_driver.findElement(By.className("shopping_cart_link")).click();
 
-        System.out.println("✅ All items were successfully removed from the cart for user: " + username);
+        // Step 5: Remove all items from Cart Page
+        for (String item : itemDataTests) {
+            try {
+                String removeButtonSelector = String.format("*[data-test=\"remove-%s\"]", item);
+                WebElement removeFromCart = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(removeButtonSelector)));
+                removeFromCart.click();
+
+                // Confirm removal
+                List<WebElement> remaining = base_driver.findElements(By.cssSelector(removeButtonSelector));
+                Assert.assertTrue(remaining.isEmpty(), item + " was not removed from the cart.");
+
+            } catch (Exception e) {
+                Assert.fail("Failed to remove item from cart: " + item + ". Error: " + e.getMessage());
+            }
+        }
+
+        // Step 6: Final check – cart should be empty
+        Assert.assertFalse(cartPage.isItemInCart(), "Cart is not empty after removing all items.");
+    }
+    @Test(dataProvider = "loginData")
+    public void TC_17_Verify_all_items_can_be_removed_from_the_main_page(String username, String password) {
+        loginPage = new LoginPage(base_driver);
+        homePage = new HomePage(base_driver);
+        cartPage = new CartPage(base_driver);
+        WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(10));
+
+        // Step 1: Login
+        loginPage.setUsername(username);
+        loginPage.setPassword(password);
+        loginPage.clickonlogin();
+
+        // Step 2: List of all item identifiers
+        String[] itemDataTests = {
+                "sauce-labs-backpack",
+                "sauce-labs-bike-light",
+                "sauce-labs-bolt-t-shirt",
+                "sauce-labs-fleece-jacket",
+                "sauce-labs-onesie",
+                "test.allthethings()-t-shirt-(red)"
+        };
+
+        // Step 3: Add all items from Home Page
+        for (String item : itemDataTests) {
+            try {
+                String addButtonSelector = String.format("*[data-test=\"add-to-cart-%s\"]", item);
+                WebElement addButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(addButtonSelector)));
+                addButton.click();
+
+                String removeButtonSelector = String.format("*[data-test=\"remove-%s\"]", item);
+                WebElement removeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(removeButtonSelector)));
+                Assert.assertTrue(removeBtn.isDisplayed(), item + " was not added properly from home page.");
+
+            } catch (Exception e) {
+                Assert.fail("Failed to add item from home page: " + item + ". Error: " + e.getMessage());
+            }
+        }
+
+        // Step 4: Remove all items from Home Page
+        for (String item : itemDataTests) {
+            try {
+                String removeButtonSelector = String.format("*[data-test=\"remove-%s\"]", item);
+                WebElement removeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(removeButtonSelector)));
+                removeBtn.click();
+
+                List<WebElement> remaining = base_driver.findElements(By.cssSelector(removeButtonSelector));
+                Assert.assertTrue(remaining.isEmpty(), item + " was not removed from the home page.");
+
+            } catch (Exception e) {
+                Assert.fail("Failed to remove item from home page: " + item + ". Error: " + e.getMessage());
+            }
+        }
+
+        // Step 5: Final check – cart icon should show no count
+        String cartBadge = "shopping_cart_badge";
+        List<WebElement> cartItems = base_driver.findElements(By.className(cartBadge));
+        Assert.assertTrue(cartItems.isEmpty(), "Cart is not empty after removing all items from home page.");
     }
     //checkout process is successfule
     @Test(dataProvider = "loginData")
