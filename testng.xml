@@ -10,9 +10,9 @@
                     <include name="TC_15_Verify_a_single_item_can_be_removed_from_the_main_page"/>
                     <include name="TC_16_Verify_all_items_can_be_removed_from_the_cart_page"/>
                     <include name="TC_17_Verify_all_items_can_be_removed_from_the_main_page"/>
-                    <include name="TestCheckoutProcess"/>
-                    <include name="testCheckoutWithEmptyFields"/>
-                    <include name="testCheckoutTotalIsCorrect"/>
+                    <include name="TC_24_TestCheckoutProcess"/>
+                    <include name="TC_26_testCheckoutWithEmptyFields"/>
+                    <include name="TC_25_testCheckoutTotalIsCorrect"/>
                     <include name="testBackToInventoryFromCart"/>
                 </methods>
             </class>
@@ -34,7 +34,6 @@
             </class>
             <class name="TestCases.Shopping_Items">
                 <methods>
-                    <include name="Test"/>
                     <include name="AddAllItemsonCart"/>
                     <include name="testAddToCartFromProductDetails"/>
                     <include name="CheckItemsNames"/>
@@ -47,11 +46,6 @@
                     <include name="TC_11_Verify_items_can_be_sorted_by_price_high_to_low"/>
                     <include name="TC_12_Verify_items_can_be_sorted_alphabetically_AtoZ"/>
                     <include name="TC_13_Verify_items_can_be_sorted_alphabetically_ZtoA"/>
-                </methods>
-            </class>
-            <class name="TestCases.test">
-                <methods>
-                    <include name="testScreenshotCapture"/>
                 </methods>
             </class>
         </classes>
