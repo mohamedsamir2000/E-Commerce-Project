@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="testing.xml added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance testing project-000002.jmx" beforeDir="false" afterPath="$PROJECT_DIR$/performance testing project-000002.jmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/TestBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +118,24 @@
       <recent name="$PROJECT_DIR$/src/test/java/Utility" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Sort">
+  <component name="RunManager" selected="TestNG.Login_and_Logout">
+    <configuration name="Login_and_Logout" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Login_and_Logout" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ScreenshotTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
@@ -130,17 +146,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="TestCases" />
       <option name="MAIN_CLASS_NAME" value="TestCases.ScreenshotTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ScreenshotTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ScreenshotTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -201,19 +206,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.ScreenshotTest" />
       <item itemvalue="TestNG.ScreenshotTest (1)" />
       <item itemvalue="TestNG.Sort" />
       <item itemvalue="TestNG.TestClass" />
       <item itemvalue="TestNG.test.testScreenshotCapture" />
+      <item itemvalue="TestNG.Login_and_Logout" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Login_and_Logout" />
         <item itemvalue="TestNG.Sort" />
         <item itemvalue="TestNG.TestClass" />
         <item itemvalue="TestNG.test.testScreenshotCapture" />
         <item itemvalue="TestNG.ScreenshotTest (1)" />
-        <item itemvalue="TestNG.ScreenshotTest" />
       </list>
     </recent_temporary>
   </component>
@@ -354,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744393097349</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="testing.xml added">
+      <option name="closed" value="true" />
+      <created>1744406134011</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1744406134011</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

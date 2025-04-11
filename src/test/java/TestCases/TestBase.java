@@ -79,28 +79,7 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void AfterMethod(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            System.out.println("Test failed, attaching screenshot...");
-            saveScreenshot(base_driver);
-        } else {
-            System.out.println("Test passed, no screenshot attached.");
-        }
-
-        if (base_driver != null) {
-            base_driver.quit();
-        }
-    }
-
-
-    @Attachment(value = "Failure Screenshot", type = "image/png")
-    public byte[] saveScreenshot(WebDriver driver) {
-        try {
-            // Wait for the page to load completely before taking the screenshot
-            return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+    public void AfterMethod() {
+        base_driver.quit();
     }
 }
