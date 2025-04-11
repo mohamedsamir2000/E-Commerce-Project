@@ -20,15 +20,6 @@ public class Menu_and_Icons extends TestBase {
     LoginPage loginPage;
     HomePage homePage;
 
-    @Test(dataProvider = "loginData")
-    public void Test(String username, String password) {
-        loginPage = new LoginPage(base_driver);
-        homePage = new HomePage(base_driver);
-
-        loginPage.setUsername(username);
-        loginPage.setPassword(password);
-        loginPage.clickonlogin();
-    }
 
     @Test(dataProvider = "loginData")
     public void ClickAllItems(String username, String password) {

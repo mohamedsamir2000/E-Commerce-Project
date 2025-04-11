@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="testing.xml added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/63e43474-6be9-4e4e-86f8-5aca86348fd1-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/7d21b9e7-bf17-4a57-a2bb-e7c20b650f5f-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/9edbea44-2c2f-47c1-8cc3-508f2104898c-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/e7efe162-aac5-48fe-8230-218915ae0a9b-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/f5cd1f19-91eb-43b4-b2c9-682015ecf95b-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-results/f6f272de-40aa-4f97-ac45-b1161e344911-container.json" beforeDir="false" />
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Menu_and_Icons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Menu_and_Icons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/emailable-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,7 +361,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744393097349</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1744415515008</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1744415515008</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1744415523006</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1744415523006</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -396,7 +403,8 @@
     <MESSAGE value="cartpage update" />
     <MESSAGE value="testing.xml added" />
     <MESSAGE value="performance report added" />
-    <option name="LAST_COMMIT_MESSAGE" value="performance report added" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
