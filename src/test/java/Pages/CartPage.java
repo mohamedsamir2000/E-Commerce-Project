@@ -118,21 +118,13 @@ public class CartPage {
     }
 
     public double getItemTotal() {
-//        try {
-//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-//            WebElement subtotal = wait.until(ExpectedConditions.visibilityOfElementLocated(itemTotalLabel));
-//            String text1 = subtotal.getText();
-//            return Double.parseDouble(text1.replace("Item total: $", ""));
-//
-//        } catch (TimeoutException | NoSuchElementException e) {
-//            System.out.println(" Subtotal label not found. Possibly a UI issue or wrong page.");
-//            e.printStackTrace();
-//        }
+
 
         String text2 = driver.findElement(itemTotalLabel).getText(); // "Item total: $39.98"
 
         return Double.parseDouble(text2.replace("Item total: $", ""));
     }
+
     public void verifySubtotalForUser(String username) {
         if (username.equals("problem_user")) {
             System.out.println("Skipping subtotal check for 'problem_user' – UI is intentionally broken.");

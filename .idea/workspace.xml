@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="Menu and Icons">
+    <list default="true" id="7beb561d-f090-4e8c-87f6-d2d066981ad4" name="Changes" comment="all exceptions handle in Cart_and_Checkout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Cart_and_Checkout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Menu_and_Icons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Menu_and_Icons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/Shopping_Items.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +79,7 @@
     "TestNG.Menu_and_Icons.clickabout.executor": "Debug",
     "TestNG.Menu_and_Icons.executor": "Run",
     "TestNG.Shopping_Items.CheckItemsNames.executor": "Run",
+    "TestNG.Shopping_Items.TC_02_Verify_that_users_can_browse_all_products.executor": "Run",
     "TestNG.Shopping_Items.Test.executor": "Run",
     "TestNG.Shopping_Items.executor": "Run",
     "TestNG.Shopping_Items.testAddToCartFromProductDetails.executor": "Run",
@@ -109,43 +110,7 @@
       <recent name="$PROJECT_DIR$/src/test/java/Utility" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Menu_and_Icons">
-    <configuration name="Cart_and_Checkout.TC_14_Verify_a_single_item_can_be_removed_from_the_cart_page" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
-      <option name="METHOD_NAME" value="TC_14_Verify_a_single_item_can_be_removed_from_the_cart_page" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Cart_and_Checkout.TC_24_TestCheckoutProcess" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
-      <option name="METHOD_NAME" value="TC_24_TestCheckoutProcess" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.Shopping_Items">
     <configuration name="Cart_and_Checkout.TC_25_testCheckoutTotalIsCorrect" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="POM" />
       <extension name="coverage">
@@ -157,24 +122,6 @@
       <option name="PACKAGE_NAME" value="TestCases" />
       <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
       <option name="METHOD_NAME" value="TC_25_testCheckoutTotalIsCorrect" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Cart_and_Checkout.TC_26_testCheckoutWithEmptyFields" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="POM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TestCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="TestCases" />
-      <option name="MAIN_CLASS_NAME" value="TestCases.Cart_and_Checkout" />
-      <option name="METHOD_NAME" value="TC_26_testCheckoutWithEmptyFields" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -199,20 +146,71 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Shopping_Items" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Shopping_Items" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Shopping_Items.TC_02_Verify_that_users_can_browse_all_products" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="MAIN_CLASS_NAME" value="TestCases.Shopping_Items" />
+      <option name="METHOD_NAME" value="TC_02_Verify_that_users_can_browse_all_products" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCases" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestCases" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="TestNG.Cart_and_Checkout.TC_14_Verify_a_single_item_can_be_removed_from_the_cart_page" />
-      <item itemvalue="TestNG.Cart_and_Checkout.TC_24_TestCheckoutProcess" />
       <item itemvalue="TestNG.Cart_and_Checkout.TC_25_testCheckoutTotalIsCorrect" />
-      <item itemvalue="TestNG.Cart_and_Checkout.TC_26_testCheckoutWithEmptyFields" />
       <item itemvalue="TestNG.Menu_and_Icons" />
+      <item itemvalue="TestNG.Shopping_Items" />
+      <item itemvalue="TestNG.Shopping_Items.TC_02_Verify_that_users_can_browse_all_products" />
+      <item itemvalue="TestNG.TestCases" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Shopping_Items" />
+        <item itemvalue="TestNG.Shopping_Items.TC_02_Verify_that_users_can_browse_all_products" />
+        <item itemvalue="TestNG.TestCases" />
         <item itemvalue="TestNG.Menu_and_Icons" />
         <item itemvalue="TestNG.Cart_and_Checkout.TC_25_testCheckoutTotalIsCorrect" />
-        <item itemvalue="TestNG.Cart_and_Checkout.TC_14_Verify_a_single_item_can_be_removed_from_the_cart_page" />
-        <item itemvalue="TestNG.Cart_and_Checkout.TC_26_testCheckoutWithEmptyFields" />
-        <item itemvalue="TestNG.Cart_and_Checkout.TC_24_TestCheckoutProcess" />
       </list>
     </recent_temporary>
   </component>
@@ -313,7 +311,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744003217227</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="all exceptions handle in Cart_and_Checkout">
+      <option name="closed" value="true" />
+      <created>1744450845051</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744450845051</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -335,7 +341,9 @@
     <MESSAGE value="LoginDataTestCases.xlsx updated&#10;Login_and_Logout.java updated" />
     <MESSAGE value="Shopping_Items update for product details page" />
     <MESSAGE value="Menu and Icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu and Icons" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="all exceptions handle in Cart_and_Checkout" />
+    <option name="LAST_COMMIT_MESSAGE" value="all exceptions handle in Cart_and_Checkout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

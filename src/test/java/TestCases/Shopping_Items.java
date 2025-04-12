@@ -2,6 +2,7 @@ package TestCases;
 
 import Pages.HomePage;
 import Pages.LoginPage;
+import org.apache.xmlbeans.impl.xb.xsdschema.All;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -49,7 +50,7 @@ public class Shopping_Items extends TestBase{
        Assert.assertEquals(CartItemsCount,RemoveButtons,"can't remove all added items to cart");
 
     }
-    //will edit it again
+
     @Test(dataProvider = "loginData")
     public void testAddToCartFromProductDetails(String username, String password) {
         homePage = new HomePage(base_driver);
@@ -62,7 +63,7 @@ public class Shopping_Items extends TestBase{
         String[] Allxpaths={"//*[@id=\"item_4_title_link\"]/div","//*[@id=\"item_0_title_link\"]/div","//*[@id=\"item_1_title_link\"]/div","//*[@id=\"item_5_title_link\"]/div","//*[@id=\"item_2_title_link\"]/div","//*[@id=\"item_3_title_link\"]/div"};
        // go to each item and open it then click on add to cart button
         for(int i=0;i<Allxpaths.length;i++){
-            homePage.AddItemtoCart(Allxpaths[i]);
+            homePage.Click_on_item(Allxpaths[i]);
             homePage.CLickAddtoCartAndBack();
         }
         //get cart count after add all items to cart
@@ -70,7 +71,7 @@ public class Shopping_Items extends TestBase{
         Assert.assertEquals(CartItemsCount,Allxpaths.length,"Cart count not correct");
         //Test to open all product again and remove them again
         for(int i=0;i<Allxpaths.length;i++){
-            homePage.AddItemtoCart(Allxpaths[i]);
+            homePage.Click_on_item(Allxpaths[i]);
             homePage.ClickRemoveThenBack();
         }
         //get items count afterRemove all products
@@ -80,6 +81,7 @@ public class Shopping_Items extends TestBase{
         Assert.assertEquals(0,AfterCartItemsCount,"Cart count not correct");
 
     }
+
     //test items names that are correct to user
     @Test(dataProvider = "loginData")
     public void CheckItemsNames (String username, String password) {

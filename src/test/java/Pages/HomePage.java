@@ -102,7 +102,7 @@ public class HomePage {
         }
     }
     //for product details page Actions
-    public void AddItemtoCart(String Xpath){
+    public void Click_on_item(String Xpath){
         driver.findElement(By.xpath(Xpath)).click();
     }
     public void CLickAddtoCartAndBack(){
