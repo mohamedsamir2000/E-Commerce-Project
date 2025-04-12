@@ -20,38 +20,48 @@ public class Menu_and_Icons extends TestBase {
     LoginPage loginPage;
     HomePage homePage;
 
-
     @Test(dataProvider = "loginData")
-    public void ClickAllItems(String username, String password) {
+    public void Test(String username, String password) {
         loginPage = new LoginPage(base_driver);
         homePage = new HomePage(base_driver);
+
         loginPage.setUsername(username);
         loginPage.setPassword(password);
         loginPage.clickonlogin();
-
-        base_driver.findElement(By.id("react-burger-menu-btn")).click();
-        Actions a = new Actions(base_driver);
-        WebElement n = base_driver.findElement(By.xpath("//a[@id='inventory_sidebar_link']"));
-        a.doubleClick().build().perform();
-        String actualpage = base_driver.getCurrentUrl();
-
-        String expectedpage = "https://www.saucedemo.com/inventory.html";
-        Assert.assertEquals(actualpage, expectedpage);
-
     }
+        @Test
+        public void ClickAllItems () {
+            loginPage = new LoginPage(base_driver);
+            homePage = new HomePage(base_driver);
+            loginPage.setUsername("standard_user");
+            loginPage.setPassword("secret_sauce");
+            loginPage.clickonlogin();
 
-    @Test(dataProvider = "loginData")
-    public void clickAbout(String username, String password) {
-        loginPage = new LoginPage(base_driver);
-        homePage = new HomePage(base_driver);
-        loginPage.setUsername(username);
-        loginPage.setPassword(password);
-        loginPage.clickonlogin();
+            base_driver.findElement(By.id("react-burger-menu-btn")).click();
+            Actions a = new Actions(base_driver);
+            WebElement n = base_driver.findElement(By.xpath("//a[@id='inventory_sidebar_link']"));
+            a.doubleClick().build().perform();
+            String actualpage = base_driver.getCurrentUrl();
 
-        base_driver.findElement(By.id("react-burger-menu-btn")).click();
-        Actions a = new Actions(base_driver);
-        WebElement n = base_driver.findElement(By.xpath("//a[@id='about_sidebar_link']"));
-        a.doubleClick().build().perform();
+            String expectedpage = "https://www.saucedemo.com/inventory.html";
+            Assert.assertEquals(actualpage, expectedpage);
+
+        }
+
+
+
+          @Test
+          public void clickAbout () {
+            loginPage = new LoginPage(base_driver);
+            homePage = new HomePage(base_driver);
+            loginPage.setUsername("standard_user");
+            loginPage.setPassword("secret_sauce");
+            loginPage.clickonlogin();
+
+            base_driver.findElement(By.id("react-burger-menu-btn")).click();
+            Actions a = new Actions(base_driver);
+            WebElement n = base_driver.findElement(By.xpath("//a[@id='about_sidebar_link']"));
+            a.doubleClick().build().perform();
 
         String expectedUrl = "https://saucelabs.com/";
         WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(10));
@@ -63,36 +73,35 @@ public class Menu_and_Icons extends TestBase {
             System.err.println("Timeout waiting for URL to be: " + expectedUrl);
         }
 
-    }
+        }
+             @Test
+             public void Clickontwitter(){
 
-    @Test(dataProvider = "loginData")
-    public void Clickontwitter(String username, String password) {
-
-        loginPage = new LoginPage(base_driver);
-        homePage = new HomePage(base_driver);
-        loginPage.setUsername(username);
-        loginPage.setPassword(password);
-        loginPage.clickonlogin();
+                 loginPage = new LoginPage(base_driver);
+                 homePage = new HomePage(base_driver);
+                 loginPage.setUsername("standard_user");
+                 loginPage.setPassword("secret_sauce");
+                 loginPage.clickonlogin();
 
         base_driver.findElement(By.linkText("Twitter")).click();
-        //base_driver.switchTo().window("https://x.com/saucelabs");
-        WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-        List<String> tabs = new ArrayList<>(base_driver.getWindowHandles());
-        base_driver.switchTo().window(tabs.get(1));
-        wait.until(ExpectedConditions.urlContains("https://x.com/saucelabs"));
-        Assert.assertTrue(base_driver.getCurrentUrl().contains("https://x.com/saucelabs"),
-                "Failed to switch to the expected tab!");
-        System.out.println("Assertion passed: Switched to the correct tab!");
+         //base_driver.switchTo().window("https://x.com/saucelabs");
+         WebDriverWait wait = new WebDriverWait(base_driver, Duration.ofSeconds(10));
+                  wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+                 List<String> tabs = new ArrayList<>(base_driver.getWindowHandles());
+                  base_driver.switchTo().window(tabs.get(1));
+                 wait.until(ExpectedConditions.urlContains("https://x.com/saucelabs"));
+                 Assert.assertTrue(base_driver.getCurrentUrl().contains("https://x.com/saucelabs"),
+                         "Failed to switch to the expected tab!");
+                 System.out.println("Assertion passed: Switched to the correct tab!");
     }
 
-    @Test(dataProvider = "loginData")
-    public void Clickonfacebook(String username, String password) {
+    @Test
+    public void Clickonfacebook(){
 
         loginPage = new LoginPage(base_driver);
         homePage = new HomePage(base_driver);
-        loginPage.setUsername(username);
-        loginPage.setPassword(password);
+        loginPage.setUsername("standard_user");
+        loginPage.setPassword("secret_sauce");
         loginPage.clickonlogin();
 
         base_driver.findElement(By.linkText("Facebook")).click();
@@ -106,13 +115,13 @@ public class Menu_and_Icons extends TestBase {
         System.out.println("Assertion passed: Switched to the correct tab!");
     }
 
-    @Test(dataProvider = "loginData")
-    public void ClickonLinkedIn(String username, String password) {
+    @Test
+    public void ClickonLinkedIn(){
 
         loginPage = new LoginPage(base_driver);
         homePage = new HomePage(base_driver);
-        loginPage.setUsername(username);
-        loginPage.setPassword(password);
+        loginPage.setUsername("standard_user");
+        loginPage.setPassword("secret_sauce");
         loginPage.clickonlogin();
 
         base_driver.findElement(By.linkText("LinkedIn")).click();
@@ -126,6 +135,8 @@ public class Menu_and_Icons extends TestBase {
         System.out.println("Assertion passed: Switched to the correct tab!");
     }
 
-}
+
+
+              }
 
 

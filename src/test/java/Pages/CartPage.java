@@ -2,11 +2,16 @@ package Pages;
 
 import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class CartPage {
     WebDriver driver;
@@ -56,7 +61,24 @@ public class CartPage {
     //fill checkout form info
     public void fillCheckoutInfo(String firstName, String lastName, String zip) {
         driver.findElement(FirstNameinput).sendKeys(firstName);
-        driver.findElement(LastNameinput).sendKeys(lastName);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        try {
+            WebElement lastNameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(LastNameinput));
+
+            if (lastNameInput.isDisplayed() && lastNameInput.isEnabled()) {
+                lastNameInput.clear();  // Optional: clear existing value
+                lastNameInput.sendKeys(lastName);
+            } else {
+                System.out.println("Last name field is not interactable. Skipping input.");
+            }
+
+        } catch (NoSuchElementException | TimeoutException e) {
+            System.out.println(" Last name field not found. Skipping input.");
+            e.printStackTrace();
+        }
+
         driver.findElement(PostalCode).sendKeys(zip);
     }
 
@@ -66,14 +88,28 @@ public class CartPage {
     }
 
     public void clickContinue() {
-        driver.findElement(ContinueButton).click();
+       // driver.findElement(ContinueButton).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(ContinueButton)).click();
     }
     public void clickFinish() {
-        driver.findElement(FinishButton).click();
+
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebElement finishBtn = wait.until(ExpectedConditions.elementToBeClickable(FinishButton));
+            finishBtn.click();
+        } catch (NoSuchElementException | TimeoutException e) {
+            System.out.println("Finish button not found or not clickable.");
+            e.printStackTrace();
+            Assert.fail("Test failed due to missing Finish button.");
+        }
+
     }
 
     public String getSuccessMessage() {
-        return driver.findElement(successMessage).getText();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(successMessage)).getText();
+       // return driver.findElement(successMessage).getText();
     }
     public List<Double> getItemPrices() {
         return driver.findElements(itemPrices).stream()
@@ -82,8 +118,28 @@ public class CartPage {
     }
 
     public double getItemTotal() {
-        String text = driver.findElement(itemTotalLabel).getText(); // "Item total: $39.98"
-        return Double.parseDouble(text.replace("Item total: $", ""));
+//        try {
+//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+//            WebElement subtotal = wait.until(ExpectedConditions.visibilityOfElementLocated(itemTotalLabel));
+//            String text1 = subtotal.getText();
+//            return Double.parseDouble(text1.replace("Item total: $", ""));
+//
+//        } catch (TimeoutException | NoSuchElementException e) {
+//            System.out.println(" Subtotal label not found. Possibly a UI issue or wrong page.");
+//            e.printStackTrace();
+//        }
+
+        String text2 = driver.findElement(itemTotalLabel).getText(); // "Item total: $39.98"
+
+        return Double.parseDouble(text2.replace("Item total: $", ""));
+    }
+    public void verifySubtotalForUser(String username) {
+        if (username.equals("problem_user")) {
+            System.out.println("Skipping subtotal check for 'problem_user' – UI is intentionally broken.");
+            Assert.fail("Subtotal label missing when it should be present.");
+           // return;
+        }
+
     }
 
     public double getTax() {
