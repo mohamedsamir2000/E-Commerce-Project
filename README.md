@@ -37,7 +37,12 @@ mvn test                                       # all scenarios (via testng.xml)
 mvn test -Dheadless=true                       # headless Chrome
 mvn test -Dcucumber.filter.tags="@Checkout"    # only one feature / tag
 mvn test -Dcucumber.filter.tags="@TC_10 or @TC_11"
+
+# use a specific Chrome + matching ChromeDriver (no Selenium Manager download)
+mvn test -Dchrome.binary=/path/to/chrome -Dwebdriver.chrome.driver=/path/to/chromedriver
 ```
+
+Chrome and ChromeDriver must have the same major version.
 
 ## Reports
 

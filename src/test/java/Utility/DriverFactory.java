@@ -11,6 +11,8 @@ import java.util.Map;
 /**
  * Creates and holds the WebDriver for the running scenario (one driver per thread).
  * Run headless with: mvn test -Dheadless=true
+ * Use a specific browser/driver (e.g. offline CI) with:
+ *   mvn test -Dchrome.binary=/path/to/chrome -Dwebdriver.chrome.driver=/path/to/chromedriver
  */
 public class DriverFactory {
 
@@ -37,6 +39,12 @@ public class DriverFactory {
         options.addArguments("disable-infobars");
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-popup-blocking");
+
+        // Optional: use a specific Chrome/Chromium binary instead of the one Selenium Manager finds/downloads
+        String chromeBinary = System.getProperty("chrome.binary");
+        if (chromeBinary != null && !chromeBinary.isBlank()) {
+            options.setBinary(chromeBinary);
+        }
 
         if (Boolean.parseBoolean(System.getProperty("headless", "false"))) {
             options.addArguments("--headless=new", "--window-size=1920,1080", "--no-sandbox", "--disable-dev-shm-usage");
