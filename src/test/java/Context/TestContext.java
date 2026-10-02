@@ -1,75 +1,105 @@
 package Context;
 
+import Models.ExpectedCart;
+import Pages.AppPage;
 import Pages.CartPage;
-import Pages.CheckoutPage;
-import Pages.HomePage;
+import Pages.CheckoutCompletePage;
+import Pages.CheckoutInformationPage;
+import Pages.CheckoutOverviewPage;
+import Pages.Components.Footer;
+import Pages.Components.Header;
+import Pages.Components.SideMenu;
+import Pages.InventoryPage;
 import Pages.LoginPage;
 import Pages.ProductDetailsPage;
+import Utility.ConfigReader;
 import Utility.DriverFactory;
 import org.openqa.selenium.WebDriver;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Shared state for a single scenario. PicoContainer injects the same instance
- * into Hooks and every step definition class, so all steps of a scenario use
- * the same driver and page objects.
+ * Shared state for a single scenario. PicoContainer creates one instance per scenario and
+ * injects it into Hooks and every step definition class, so all steps share the same
+ * driver, page objects and expected cart.
  */
 public class TestContext {
 
     private LoginPage loginPage;
-    private HomePage homePage;
+    private InventoryPage inventoryPage;
     private ProductDetailsPage productDetailsPage;
     private CartPage cartPage;
-    private CheckoutPage checkoutPage;
+    private CheckoutInformationPage checkoutInformationPage;
+    private CheckoutOverviewPage checkoutOverviewPage;
+    private CheckoutCompletePage checkoutCompletePage;
+    private Header header;
+    private SideMenu sideMenu;
+    private Footer footer;
 
-    private String currentUsername;
-    private List<String> selectedItems = new ArrayList<>();
+    private final ExpectedCart expectedCart = new ExpectedCart();
 
     public WebDriver getDriver() {
         return DriverFactory.getDriver();
     }
 
-    public LoginPage getLoginPage() {
+    public LoginPage loginPage() {
         if (loginPage == null) loginPage = new LoginPage(getDriver());
         return loginPage;
     }
 
-    public HomePage getHomePage() {
-        if (homePage == null) homePage = new HomePage(getDriver());
-        return homePage;
+    public InventoryPage inventoryPage() {
+        if (inventoryPage == null) inventoryPage = new InventoryPage(getDriver());
+        return inventoryPage;
     }
 
-    public ProductDetailsPage getProductDetailsPage() {
+    public ProductDetailsPage productDetailsPage() {
         if (productDetailsPage == null) productDetailsPage = new ProductDetailsPage(getDriver());
         return productDetailsPage;
     }
 
-    public CartPage getCartPage() {
+    public CartPage cartPage() {
         if (cartPage == null) cartPage = new CartPage(getDriver());
         return cartPage;
     }
 
-    public CheckoutPage getCheckoutPage() {
-        if (checkoutPage == null) checkoutPage = new CheckoutPage(getDriver());
-        return checkoutPage;
+    public CheckoutInformationPage checkoutInformationPage() {
+        if (checkoutInformationPage == null) checkoutInformationPage = new CheckoutInformationPage(getDriver());
+        return checkoutInformationPage;
     }
 
-    public String getCurrentUsername() {
-        return currentUsername;
+    public CheckoutOverviewPage checkoutOverviewPage() {
+        if (checkoutOverviewPage == null) checkoutOverviewPage = new CheckoutOverviewPage(getDriver());
+        return checkoutOverviewPage;
     }
 
-    public void setCurrentUsername(String currentUsername) {
-        this.currentUsername = currentUsername;
+    public CheckoutCompletePage checkoutCompletePage() {
+        if (checkoutCompletePage == null) checkoutCompletePage = new CheckoutCompletePage(getDriver());
+        return checkoutCompletePage;
     }
 
-    /** Products the current scenario added to the cart, in order. */
-    public List<String> getSelectedItems() {
-        return selectedItems;
+    public Header header() {
+        if (header == null) header = new Header(getDriver());
+        return header;
     }
 
-    public void setSelectedItems(List<String> selectedItems) {
-        this.selectedItems = new ArrayList<>(selectedItems);
+    public SideMenu sideMenu() {
+        if (sideMenu == null) sideMenu = new SideMenu(getDriver());
+        return sideMenu;
+    }
+
+    public Footer footer() {
+        if (footer == null) footer = new Footer(getDriver());
+        return footer;
+    }
+
+    /** Products the scenario expects in the cart, kept up to date by the add/remove steps. */
+    public ExpectedCart expectedCart() {
+        return expectedCart;
+    }
+
+    /** True when the browser is currently on the given page (by URL path). */
+    public boolean isOn(AppPage page) {
+        String url = getDriver().getCurrentUrl();
+        return page == AppPage.LOGIN
+                ? url.equals(ConfigReader.baseUrl())
+                : url.contains("/" + page.path());
     }
 }

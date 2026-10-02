@@ -1,5 +1,6 @@
 package Hooks;
 
+import Utility.ConfigReader;
 import Utility.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -13,7 +14,7 @@ public class Hooks {
     @Before
     public void setUp() {
         WebDriver driver = DriverFactory.initDriver();
-        driver.get(DriverFactory.BASE_URL);
+        driver.get(ConfigReader.baseUrl());
     }
 
     @After

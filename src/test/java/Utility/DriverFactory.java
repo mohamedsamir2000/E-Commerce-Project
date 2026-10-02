@@ -16,8 +16,6 @@ import java.util.Map;
  */
 public class DriverFactory {
 
-    public static final String BASE_URL = "https://www.saucedemo.com/";
-
     private static final ThreadLocal<WebDriver> DRIVER = new ThreadLocal<>();
 
     private DriverFactory() {
@@ -46,7 +44,7 @@ public class DriverFactory {
             options.setBinary(chromeBinary);
         }
 
-        if (Boolean.parseBoolean(System.getProperty("headless", "false"))) {
+        if (ConfigReader.headless()) {
             options.addArguments("--headless=new", "--window-size=1920,1080", "--no-sandbox", "--disable-dev-shm-usage");
         }
 

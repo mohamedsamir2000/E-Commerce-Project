@@ -1,6 +1,8 @@
 package Pages;
 
+import Utility.ConfigReader;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,17 +12,23 @@ import java.time.Duration;
 import java.util.List;
 
 /**
- * Common driver helpers shared by all page objects.
+ * Common driver helpers shared by all page objects and components.
  */
 public abstract class BasePage {
+
+    private final By pageTitle = By.cssSelector("span.title");
+    private final By errorMessage = By.cssSelector("h3[data-test='error']");
+    private final By errorCloseButton = By.cssSelector(".error-button");
 
     protected final WebDriver driver;
     protected final WebDriverWait wait;
 
     protected BasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeoutSeconds()));
     }
+
+    // ---------- Element helpers ----------
 
     protected WebElement waitForVisible(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -37,11 +45,11 @@ public abstract class BasePage {
     protected void type(By locator, String text) {
         WebElement element = waitForVisible(locator);
         element.clear();
-        element.sendKeys(text);
+        element.sendKeys(text == null ? "" : text);
     }
 
     protected String getText(By locator) {
-        return waitForVisible(locator).getText();
+        return waitForVisible(locator).getText().trim();
     }
 
     protected boolean isDisplayed(By locator) {
@@ -49,26 +57,56 @@ public abstract class BasePage {
         return !elements.isEmpty() && elements.get(0).isDisplayed();
     }
 
-    protected static double parsePrice(String text) {
-        return Double.parseDouble(text.replaceAll("[^0-9.]", ""));
+    protected boolean isDisplayedWithin(By locator) {
+        try {
+            waitForVisible(locator);
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
 
-    /**
-     * Converts a product name to the id used in the site's data-test attributes,
-     * e.g. "Sauce Labs Backpack" -> "sauce-labs-backpack".
-     */
-    protected static String toDataTestId(String productName) {
-        return productName.trim().toLowerCase().replace(' ', '-');
+    // ---------- Shared page parts ----------
+
+    /** The secondary header title, e.g. "Products" or "Your Cart". */
+    public String getPageTitle() {
+        return getText(pageTitle);
     }
+
+    public boolean isErrorDisplayed() {
+        return isDisplayed(errorMessage);
+    }
+
+    public String getErrorMessage() {
+        return getText(errorMessage);
+    }
+
+    public void dismissErrorMessage() {
+        click(errorCloseButton);
+    }
+
+    // ---------- Browser ----------
 
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
 
+    public void open(String url) {
+        driver.get(url);
+    }
+
+    public void refresh() {
+        driver.navigate().refresh();
+    }
+
+    public void navigateBack() {
+        driver.navigate().back();
+    }
+
     public boolean waitForUrlToBe(String url) {
         try {
             return wait.until(ExpectedConditions.urlToBe(url));
-        } catch (org.openqa.selenium.TimeoutException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -76,7 +114,7 @@ public abstract class BasePage {
     public boolean waitForUrlToContain(String fragment) {
         try {
             return wait.until(ExpectedConditions.urlContains(fragment));
-        } catch (org.openqa.selenium.TimeoutException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
