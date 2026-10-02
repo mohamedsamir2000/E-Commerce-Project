@@ -98,7 +98,8 @@ public class MenuAndFooterSteps {
     @Then("a new tab should open with a URL containing {string}")
     public void aNewTabShouldOpenWithUrlContaining(String expectedUrl) {
         footer.switchToNewTab();
-        Assert.assertTrue(footer.waitForUrlToContain(expectedUrl),
+        // Social sites may redirect logged-out visitors to a login page that carries the target in a query parameter
+        Assert.assertTrue(footer.waitForDecodedUrlToContain(expectedUrl),
                 "New tab URL was: " + footer.getCurrentUrl());
     }
 }

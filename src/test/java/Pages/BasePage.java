@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.List;
 
@@ -114,6 +116,18 @@ public abstract class BasePage {
     public boolean waitForUrlToContain(String fragment) {
         try {
             return wait.until(ExpectedConditions.urlContains(fragment));
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Like {@link #waitForUrlToContain(String)} but also matches the URL-decoded URL, so a redirect such as
+     * facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fsaucelabs still counts as the expected page.
+     */
+    public boolean waitForDecodedUrlToContain(String fragment) {
+        try {
+            return wait.until(d -> URLDecoder.decode(d.getCurrentUrl(), StandardCharsets.UTF_8).contains(fragment));
         } catch (TimeoutException e) {
             return false;
         }
