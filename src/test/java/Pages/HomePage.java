@@ -1,256 +1,206 @@
 package Pages;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.UnhandledAlertException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class HomePage {
+/**
+ * The inventory (products) page shown after a successful login,
+ * including the header cart icon, the side menu and the footer links.
+ */
+public class HomePage extends BasePage {
 
-    WebDriver driver;
-    public HomePage(WebDriver driver){
+    // Header
+    private final By appLogo = By.className("app_logo");
+    private final By cartLink = By.className("shopping_cart_link");
+    private final By cartBadge = By.className("shopping_cart_badge");
 
-        this.driver = driver;
+    // Side menu
+    private final By menuButton = By.id("react-burger-menu-btn");
+    private final By allItemsMenuLink = By.id("inventory_sidebar_link");
+    private final By aboutMenuLink = By.id("about_sidebar_link");
+    private final By logoutMenuLink = By.id("logout_sidebar_link");
+    private final By resetAppStateMenuLink = By.id("reset_sidebar_link");
+
+    // Inventory
+    private final By inventoryContainer = By.id("inventory_container");
+    private final By inventoryItems = By.className("inventory_item");
+    private final By itemNames = By.className("inventory_item_name");
+    private final By itemPrices = By.className("inventory_item_price");
+    private final By addToCartButtons = By.xpath("//button[text()='Add to cart']");
+    private final By removeButtons = By.xpath("//button[text()='Remove']");
+    private final By sortDropdown = By.className("product_sort_container");
+
+    public HomePage(WebDriver driver) {
+        super(driver);
     }
 
-    //Page elements
-
-    public By SwagLabsLogo = By.className("app_logo");
-    public By Cart_Btn = By.className("shopping_cart_link");
-    public By Menu = By.id("react-burger-menu-btn");
-    public By AllItems_Menu = By.xpath("//*[@id=\"inventory_sidebar_link\"]");
-    public By About_Menu = By.xpath("//*[@id=\"about_sidebar_link\"]");
-    public By Logout_Menu = By.xpath("//*[@id=\"logout_sidebar_link\"]");
-    public By ResetAppState_Menu = By.xpath("//*[@id=\"reset_sidebar_link\"]");
-    public By Twitter_btn = By.xpath("//*[@id=\"page_wrapper\"]/footer/ul/li[1]/a");
-    public By Facebook_btn = By.xpath("//*[@id=\"page_wrapper\"]/footer/ul/li[2]/a");
-    public By Likedin_btn = By.xpath("//*[@id=\"page_wrapper\"]/footer/ul/li[3]/a");
-    public By removeButtons = By.xpath("//button[text()='Remove']");
-    public By addToCartButtons=By.xpath("//button[text()='Add to cart']");
-    public By inventoryContainer = By.id("inventory_container");
-    //product details Locators
-    private By backButton = By.id("back-to-products");
-    private By productLinks = By.className("inventory_item_name");
-
-    // Locator for the shopping cart icon
-    public By cartIcon = By.className("shopping_cart_link");
-
-    // Method to click on the cart icon to navigate to the cart page
-    public void clickOnCart() {
-        driver.findElement(cartIcon).click();
+    private By addToCartButtonFor(String productName) {
+        return By.cssSelector(String.format("[data-test=\"add-to-cart-%s\"]", toDataTestId(productName)));
     }
 
-    //Lists of items elements
-
-    public List<String> getItemsName() {
-        return driver.findElements(By.className("inventory_item_name")).stream().map(WebElement::getText).toList();  // Collect as List<String>
-
+    private By removeButtonFor(String productName) {
+        return By.cssSelector(String.format("[data-test=\"remove-%s\"]", toDataTestId(productName)));
     }
 
-    public List<String> getItemsPrice() {
-
-        return driver.findElements(By.className("inventory_item_price")).stream().map(WebElement::getText).toList();
+    private By productLinkFor(String productName) {
+        return By.xpath(String.format("//div[contains(@class,'inventory_item_name') and normalize-space()=\"%s\"]", productName));
     }
 
-//    public List<WebElement> getItemsAddToCart() {
-//        return driver.findElements(By.className("btn btn_primary btn_small btn_inventory"));
-//    }
-//    public List<WebElement> GetremovesButtons(){
-//        return driver.findElements(By.xpath("//button[text()='Remove']"));
-//    }
-    public boolean isInventoryDisplayed(){
-       return driver.findElement(inventoryContainer).isDisplayed();
+    // ---------- Inventory ----------
+
+    public boolean isInventoryDisplayed() {
+        return isDisplayed(inventoryContainer) && isDisplayed(appLogo);
     }
-   public int getInventoryItemCount(){
-        return driver.findElements(By.className("inventory_item")).size();
-   }
 
-    public  void clickAllAddToCartButtons() {
-        List<WebElement> addButtons = driver.findElements(addToCartButtons);
+    public int getInventoryItemCount() {
+        return driver.findElements(inventoryItems).size();
+    }
 
-        //System.out.println("Total Add to Cart buttons found: " + addButtons.size());
+    public List<String> getItemNames() {
+        return driver.findElements(itemNames).stream().map(e -> e.getText().trim()).toList();
+    }
 
-        for (WebElement button : addButtons) {
+    public List<Double> getItemPrices() {
+        return driver.findElements(itemPrices).stream().map(e -> parsePrice(e.getText())).toList();
+    }
+
+    public void addItemToCart(String productName) {
+        click(addToCartButtonFor(productName));
+    }
+
+    public void removeItemFromCart(String productName) {
+        click(removeButtonFor(productName));
+    }
+
+    public boolean isRemoveButtonDisplayed(String productName) {
+        try {
+            waitForVisible(removeButtonFor(productName));
+            return true;
+        } catch (org.openqa.selenium.TimeoutException e) {
+            return false;
+        }
+    }
+
+    public boolean isAddToCartButtonDisplayed(String productName) {
+        try {
+            waitForVisible(addToCartButtonFor(productName));
+            return true;
+        } catch (org.openqa.selenium.TimeoutException e) {
+            return false;
+        }
+    }
+
+    public void clickAllAddToCartButtons() {
+        for (WebElement button : driver.findElements(addToCartButtons)) {
             button.click();
         }
     }
-    public  void clickAllRemoveButtons() {
-        List<WebElement> removeButtonsList = driver.findElements(removeButtons);
 
-        //System.out.println("Total Add to Cart buttons found: " + removeButtonsList.size());
-
-        for (WebElement button : removeButtonsList) {
+    public void clickAllRemoveButtons() {
+        for (WebElement button : driver.findElements(removeButtons)) {
             button.click();
         }
     }
+
     public int getRemoveButtonsCount() {
         return driver.findElements(removeButtons).size();
     }
-    //get cart count to check it
-    public int getCartItemCount() {
+
+    public void openProductDetails(String productName) {
+        click(productLinkFor(productName));
+    }
+
+    // ---------- Header / cart ----------
+
+    public void clickCart() {
+        click(cartLink);
+    }
+
+    /**
+     * @return the number shown on the cart badge, or 0 when no badge is displayed.
+     */
+    public int getCartBadgeCount() {
+        List<WebElement> badges = driver.findElements(cartBadge);
+        if (badges.isEmpty() || badges.get(0).getText().isBlank()) {
+            return 0;
+        }
+        return Integer.parseInt(badges.get(0).getText().trim());
+    }
+
+    // ---------- Sorting ----------
+
+    /**
+     * Selects a sort option by its visible text, e.g. "Price (low to high)".
+     * Some users (error_user) get an unexpected alert; it is accepted and the selection is retried once.
+     */
+    public void sortBy(String optionText) {
         try {
-            WebElement cartBadgeElement = driver.findElement(Cart_Btn);
-            return Integer.parseInt(cartBadgeElement.getText());
-        } catch (Exception e) {
-            return 0; // No badge means no items in the cart
+            selectSortOption(optionText);
+        } catch (UnhandledAlertException e) {
+            dismissAlertIfPresent();
+            selectSortOption(optionText);
         }
-    }
-    //for product details page Actions
-    public void Click_on_item(String Xpath){
-        driver.findElement(By.xpath(Xpath)).click();
-    }
-    public void CLickAddtoCartAndBack(){
-        driver.findElement(By.xpath("//button[text()='Add to cart']")).click();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Add to cart']")));
-        driver.findElement(backButton).click();
-    }
-    public void ClickRemoveThenBack(){
-        driver.findElement(removeButtons).click();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(backButton).click();
-
-
+        dismissAlertIfPresent();
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(itemNames));
     }
 
+    private void selectSortOption(String optionText) {
+        new Select(waitForVisible(sortDropdown)).selectByVisibleText(optionText);
+    }
 
-
-    //sort dropdown list
-    //Method to select by index
-    public boolean verifySortingByName(int sortIndex) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
+    private void dismissAlertIfPresent() {
         try {
-            // Locate dropdown and select sorting option by index
-            WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
-            Select select = new Select(dropdown);
-            select.selectByIndex(sortIndex); // 0 = A to Z, 1 = Z to A
-
-            // Wait for items to be sorted
-            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_name")));
-
-        } catch (Exception e) {
-            System.out.println("Exception occurred while selecting sorting option: " + e.getMessage());
-
-            try {
-                Alert alert = driver.switchTo().alert();
-                System.out.println("Unexpected Alert Found: " + alert.getText());
-                alert.accept(); // Accept (dismiss) the alert
-                System.out.println("Alert dismissed.");
-
-                // Retry selecting the sorting option after dismissing the alert
-                WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
-                Select select = new Select(dropdown);
-                select.selectByIndex(sortIndex);
-
-                // Wait for sorted elements
-                wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_name")));
-
-            } catch (NoAlertPresentException noAlert) {
-                System.out.println("No alert found after exception.");
-            }
+            Alert alert = driver.switchTo().alert();
+            System.out.println("Unexpected alert found: " + alert.getText());
+            alert.accept();
+        } catch (NoAlertPresentException ignored) {
+            // no alert to dismiss
         }
-
-        // Extract product names dynamically from the webpage
-        List<WebElement> nameElements = driver.findElements(By.className("inventory_item_name"));
-        List<String> extractedNames = new ArrayList<>();
-
-        for (WebElement nameElement : nameElements) {
-            extractedNames.add(nameElement.getText().trim());
-        }
-
-        // Sort a copy of the extracted names to compare
-        List<String> expectedSortedNames = new ArrayList<>(extractedNames);
-
-        if (sortIndex == 0) { // Name A to Z
-            Collections.sort(expectedSortedNames);
-        } else if (sortIndex == 1) { // Name Z to A
-            expectedSortedNames.sort(Collections.reverseOrder());
-        } else {
-            throw new IllegalArgumentException("Invalid index for name sorting: " + sortIndex);
-        }
-
-        // Compare the extracted names (from UI) with the expected sorted list
-        return extractedNames.equals(expectedSortedNames);
     }
 
+    // ---------- Side menu ----------
 
-    public boolean verifySortingByPrice(int sortIndex) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-        try {
-            // Locate dropdown and select sorting option by index
-            WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
-            Select select = new Select(dropdown);
-            select.selectByIndex(sortIndex); // 2 = Low to High, 3 = High to Low
-
-            // Wait for items to be sorted
-            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_price")));
-
-        } catch (Exception e) {
-            System.out.println("Exception occurred while selecting sorting option: " + e.getMessage());
-
-            try {
-                Alert alert = driver.switchTo().alert();
-                System.out.println("Unexpected Alert Found: " + alert.getText());
-                alert.accept(); // Accept (dismiss) the alert
-                System.out.println("Alert dismissed.");
-
-                // Retry selecting the sorting option after dismissing the alert
-                WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_sort_container")));
-                Select select = new Select(dropdown);
-                select.selectByIndex(sortIndex);
-
-                // Wait for sorted elements
-                wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("inventory_item_price")));
-
-            } catch (NoAlertPresentException noAlert) {
-                System.out.println("No alert found after exception.");
-            }
-        }
-
-        // Extract prices dynamically from the webpage
-        List<WebElement> priceElements = driver.findElements(By.className("inventory_item_price"));
-        List<Double> extractedPrices = new ArrayList<>();
-
-        for (WebElement priceElement : priceElements) {
-            String priceText = priceElement.getText().replace("$", "").trim(); // Remove '$' and spaces
-            extractedPrices.add(Double.parseDouble(priceText));
-        }
-
-        // Sort a copy of the extracted prices to compare
-        List<Double> expectedSortedPrices = new ArrayList<>(extractedPrices);
-
-        if (sortIndex == 2) { // Price Low to High
-            Collections.sort(expectedSortedPrices);
-        } else if (sortIndex == 3) { // Price High to Low
-            expectedSortedPrices.sort(Collections.reverseOrder());
-        } else {
-            throw new IllegalArgumentException("Invalid index for price sorting: " + sortIndex);
-        }
-
-        // Compare the extracted prices (from UI) with the expected sorted list
-        return extractedPrices.equals(expectedSortedPrices);
+    public void openMenu() {
+        click(menuButton);
     }
 
-
-
-    //for By elements
-    public void ClickOn(By Button){
-
-        driver.findElement(Button).click();
+    public void clickMenuItem(String menuItem) {
+        By link = switch (menuItem.trim().toLowerCase()) {
+            case "all items" -> allItemsMenuLink;
+            case "about" -> aboutMenuLink;
+            case "logout" -> logoutMenuLink;
+            case "reset app state" -> resetAppStateMenuLink;
+            default -> throw new IllegalArgumentException("Unknown menu item: " + menuItem);
+        };
+        click(link);
     }
 
+    public void logout() {
+        openMenu();
+        clickMenuItem("Logout");
+    }
 
-    //for WebElements
-    public void ClickOn(WebElement button) {
+    // ---------- Footer ----------
 
-        button.click();
+    public void clickSocialLink(String network) {
+        click(By.linkText(network));
+    }
+
+    /**
+     * Waits for a second browser tab to open and switches to it.
+     */
+    public void switchToNewTab() {
+        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+        List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
     }
 }
