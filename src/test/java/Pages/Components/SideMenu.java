@@ -2,6 +2,7 @@ package Pages.Components;
 
 import Pages.BasePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -24,11 +25,24 @@ public class SideMenu extends BasePage {
     public void open() {
         click(openButton);
         wait.until(ExpectedConditions.attributeToBe(menuWrap, "aria-hidden", "false"));
+        waitForSlideToFinish();
     }
 
     public void close() {
         click(closeButton);
         wait.until(ExpectedConditions.attributeToBe(menuWrap, "aria-hidden", "true"));
+        waitForSlideToFinish();
+    }
+
+    /** The menu slides in and out; clicks made while it is still moving miss or hit the overlay. */
+    private void waitForSlideToFinish() {
+        Rectangle[] last = {null};
+        wait.until(d -> {
+            Rectangle now = d.findElement(menuWrap).getRect();
+            boolean settled = now.equals(last[0]);
+            last[0] = now;
+            return settled;
+        });
     }
 
     public boolean isOpen() {

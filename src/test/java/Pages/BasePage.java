@@ -2,6 +2,7 @@ package Pages;
 
 import Utility.ConfigReader;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -46,7 +47,12 @@ public abstract class BasePage {
 
     protected void type(By locator, String text) {
         WebElement element = waitForVisible(locator);
-        element.clear();
+        // clear() empties the field without firing React's change event, so the app would keep the old value
+        String current = element.getAttribute("value");
+        if (current != null && !current.isEmpty()) {
+            element.sendKeys(Keys.END);
+            element.sendKeys(Keys.BACK_SPACE.toString().repeat(current.length()));
+        }
         element.sendKeys(text == null ? "" : text);
     }
 

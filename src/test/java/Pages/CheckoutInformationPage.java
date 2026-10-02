@@ -27,8 +27,7 @@ public class CheckoutInformationPage extends BasePage {
         try {
             WebElement lastNameField = waitForVisible(lastNameInput);
             if (lastNameField.isEnabled()) {
-                lastNameField.clear();
-                lastNameField.sendKeys(info.lastName());
+                type(lastNameInput, info.lastName());
             } else {
                 System.out.println("Last name field is not interactable. Skipping input.");
             }

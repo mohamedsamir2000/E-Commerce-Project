@@ -46,4 +46,11 @@ public class Footer extends BasePage {
         List<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
     }
+
+    /** Closes the current (new) tab and switches back to the first tab. */
+    public void closeNewTabAndReturn() {
+        List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.close();
+        driver.switchTo().window(tabs.get(0));
+    }
 }

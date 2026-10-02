@@ -102,4 +102,9 @@ public class MenuAndFooterSteps {
         Assert.assertTrue(footer.waitForDecodedUrlToContain(expectedUrl),
                 "New tab URL was: " + footer.getCurrentUrl());
     }
+
+    @When("the user closes the new tab and returns to the store")
+    public void theUserClosesTheNewTabAndReturnsToTheStore() {
+        footer.closeNewTabAndReturn();
+    }
 }

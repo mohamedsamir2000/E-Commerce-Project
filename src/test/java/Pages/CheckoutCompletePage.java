@@ -24,7 +24,12 @@ public class CheckoutCompletePage extends BasePage {
         return getText(completeText);
     }
 
+    /** Clicks Back Home; a click that lands while the page is still rendering is lost, so it is retried once. */
     public void backHome() {
+        waitForVisible(completeHeader);
         click(backHomeButton);
+        if (!waitForUrlToContain("/inventory.html") && isDisplayed(backHomeButton)) {
+            click(backHomeButton);
+        }
     }
 }

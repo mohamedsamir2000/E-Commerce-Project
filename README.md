@@ -2,6 +2,27 @@
 
 End-to-end UI tests for [Swag Labs](https://www.saucedemo.com/) written with **Cucumber (Java)**, **Selenium WebDriver** and **TestNG**, following the **Page Object Model**.
 
+## End-to-end journeys
+
+`features/journeys/` holds the end-to-end suite: every scenario starts at login and walks a whole
+session (browse → cart → checkout → order → logout), checking each page on the way.
+
+| Feature file | Journeys |
+|---|---|
+| `01_Purchase_Journeys.feature` | Full purchase for standard/performance_glitch users, sort-then-buy for every sort option, buy each product from its details page, open by image then buy the whole catalog |
+| `02_Cart_Journeys.feature` | Change the cart on the products, details and cart pages; cancel at the last step and adjust; cart kept after refresh and re-login; Reset App State then shop again |
+| `03_Checkout_Journeys.feature` | Fix each missing checkout field then order; cancel on each checkout step then order; order totals |
+| `04_Access_Journeys.feature` | Pages blocked before login, every login error, shop, blocked again after logout; locked-out user |
+| `05_Navigation_Journeys.feature` | Side menu from every page while shopping, footer social links in new tabs while shopping, About after an order |
+| `06_Known_Site_Bugs.feature` | `@known_issue` – journeys for problem_user, error_user and visual_user that hit the site's intentional bugs (expected to fail, skipped by default) |
+
+```bash
+mvn test -Dcucumber.filter.tags="@journey and not @known_issue"   # end-to-end suite (green)
+mvn test -Dcucumber.filter.tags="@known_issue"                    # show the site's intentional bugs
+```
+
+The runner skips `@known_issue` by default; passing `-Dcucumber.filter.tags` replaces that filter.
+
 ## Coverage
 
 | Feature file | What it covers |
