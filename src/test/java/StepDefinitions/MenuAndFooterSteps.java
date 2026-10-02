@@ -44,6 +44,8 @@ public class MenuAndFooterSteps {
         sideMenu.select(item);
         if (item.equalsIgnoreCase("Reset App State")) {
             context.expectedCart().clear();
+            // Reset does not navigate, so the menu stays open and its overlay would block the next click
+            sideMenu.close();
         }
     }
 

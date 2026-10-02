@@ -64,12 +64,13 @@ Feature: Products catalog
       | visual_user             | Name (Z to A)       |
 
   @sorting
-  Scenario: The chosen sort order is kept after visiting a product
+  Scenario: The sort order goes back to the default after visiting a product
     Given the user is logged in as "standard_user"
     When the user sorts the products by "Price (high to low)"
     And the user opens the product "Sauce Labs Onesie"
     And the user goes back to the products page
-    Then the products should be sorted by "Price (high to low)"
+    Then the active sort option should be "Name (A to Z)"
+    And the products should be sorted by "Name (A to Z)"
 
   @product_details
   Scenario Outline: The details page of "<product>" shows its name, description, price and image

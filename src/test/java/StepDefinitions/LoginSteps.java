@@ -42,7 +42,9 @@ public class LoginSteps {
 
     @When("the user logs out")
     public void theUserLogsOut() {
-        context.sideMenu().open();
+        if (!context.sideMenu().isOpen()) {
+            context.sideMenu().open();
+        }
         context.sideMenu().select("Logout");
     }
 

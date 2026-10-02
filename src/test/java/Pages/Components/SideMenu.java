@@ -15,7 +15,7 @@ public class SideMenu extends BasePage {
     private final By openButton = By.id("react-burger-menu-btn");
     private final By closeButton = By.id("react-burger-cross-btn");
     private final By menuWrap = By.className("bm-menu-wrap");
-    private final By menuItems = By.cssSelector("nav.bm-item-list a.menu-item");
+    private final By menuItems = By.cssSelector(".bm-item-list a.menu-item");
 
     public SideMenu(WebDriver driver) {
         super(driver);
