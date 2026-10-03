@@ -59,6 +59,13 @@
             <version>${allure.version}</version>
         </dependency>
 
+        <!-- JCodec: encodes the per-scenario screen recording to MP4 in pure Java (no ffmpeg needed) -->
+        <dependency>
+            <groupId>org.jcodec</groupId>
+            <artifactId>jcodec-javase</artifactId>
+            <version>0.2.5</version>
+        </dependency>
+
         <!-- WebDriverManager -->
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>

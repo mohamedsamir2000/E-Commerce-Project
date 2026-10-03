@@ -16,7 +16,8 @@ import io.cucumber.testng.CucumberOptions;
                 "pretty",
                 "html:target/cucumber-reports/cucumber.html",
                 "json:target/cucumber-reports/cucumber.json",
-                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+                "Utility.ScreenRecorder"
         },
         monochrome = true
 )

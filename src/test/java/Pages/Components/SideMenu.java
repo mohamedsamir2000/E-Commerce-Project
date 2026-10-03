@@ -3,9 +3,12 @@ package Pages.Components;
 import Pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Rectangle;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 /**
@@ -55,6 +58,10 @@ public class SideMenu extends BasePage {
                 .toList();
     }
 
+    /**
+     * Opens the menu if needed and clicks the item. The menu can be closed again by a page re-render right
+     * after it was opened, so the item is retried with the menu reopened.
+     */
     public void select(String item) {
         By link = switch (item.trim().toLowerCase()) {
             case "all items" -> By.id("inventory_sidebar_link");
@@ -63,6 +70,18 @@ public class SideMenu extends BasePage {
             case "reset app state" -> By.id("reset_sidebar_link");
             default -> By.linkText(item);
         };
-        click(link);
+        for (int attempt = 1; ; attempt++) {
+            if (!isOpen()) {
+                open();
+            }
+            try {
+                new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.elementToBeClickable(link)).click();
+                return;
+            } catch (TimeoutException e) {
+                if (attempt == 3) {
+                    throw e;
+                }
+            }
+        }
     }
 }

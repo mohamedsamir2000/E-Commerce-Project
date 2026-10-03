@@ -38,9 +38,6 @@ public class MenuAndFooterSteps {
 
     @When("the user selects {string} from the menu")
     public void theUserSelectsFromTheMenu(String item) {
-        if (!sideMenu.isOpen()) {
-            sideMenu.open();
-        }
         sideMenu.select(item);
         if (item.equalsIgnoreCase("Reset App State")) {
             context.expectedCart().clear();

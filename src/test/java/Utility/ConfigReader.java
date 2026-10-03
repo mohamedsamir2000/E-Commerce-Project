@@ -51,4 +51,14 @@ public final class ConfigReader {
     public static int timeoutSeconds() {
         return Integer.parseInt(get("timeout.seconds"));
     }
+
+    /** Screen recording mode: all, failed or off. */
+    public static String videoMode() {
+        return get("video").toLowerCase();
+    }
+
+    /** Screenshot mode: all or failed. */
+    public static String screenshotMode() {
+        return get("screenshot").toLowerCase();
+    }
 }

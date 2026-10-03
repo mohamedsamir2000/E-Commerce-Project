@@ -23,6 +23,26 @@ mvn test -Dcucumber.filter.tags="@known_issue"                    # show the sit
 
 The runner skips `@known_issue` by default; passing `-Dcucumber.filter.tags` replaces that filter.
 
+## Screen recordings and screenshots
+
+Every scenario is screen recorded: while it runs, `Utility/ScreenRecorder` streams the browser tab as a
+live video (Chrome DevTools screencast). When the scenario ends, `Hooks` writes it as an MP4 that plays at
+the real speed of the test, with the step that was running shown in a caption bar (green = passed,
+red = failed). The video is attached to the Cucumber HTML report and the Allure report next to the
+screenshot, and saved in `target/videos/`.
+
+Works in headless mode and on any OS with any Chrome version (it records the browser tab, not the desktop),
+no ffmpeg or screen-recording permission needed.
+
+```bash
+mvn test                       # video of every scenario, screenshot when a scenario fails (defaults)
+mvn test -Dvideo=failed        # keep videos of failed scenarios only
+mvn test -Dvideo=off           # no recording
+mvn test -Dscreenshot=all      # final screenshot for every scenario, not only failures
+```
+
+The defaults are in `src/test/resources/config.properties`.
+
 ## Coverage
 
 | Feature file | What it covers |

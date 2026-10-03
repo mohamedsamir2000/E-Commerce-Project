@@ -2,6 +2,7 @@ package Pages.Components;
 
 import Pages.BasePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -34,10 +35,11 @@ public class Header extends BasePage {
 
     /** @return the number on the cart badge, or 0 when no badge is shown. */
     public int getCartBadgeCount() {
-        List<WebElement> badges = driver.findElements(cartBadge);
-        if (badges.isEmpty() || badges.get(0).getText().isBlank()) {
-            return 0;
-        }
-        return Integer.parseInt(badges.get(0).getText().trim());
+        // The page can re-render between finding the badge and reading it (e.g. performance_glitch_user)
+        return wait.ignoring(StaleElementReferenceException.class).until(d -> {
+            List<WebElement> badges = d.findElements(cartBadge);
+            String text = badges.isEmpty() ? "" : badges.get(0).getText().trim();
+            return text.isEmpty() ? 0 : Integer.parseInt(text);
+        });
     }
 }
