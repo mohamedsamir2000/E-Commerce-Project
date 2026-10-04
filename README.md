@@ -1,134 +1,134 @@
 # E-Commerce Project – Cucumber BDD Test Automation
 
-End-to-end UI tests for [Swag Labs](https://www.saucedemo.com/) written with **Cucumber (Java)**, **Selenium WebDriver** and **TestNG**, following the **Page Object Model**.
+End-to-end UI tests for [Swag Labs](https://www.saucedemo.com/) written with **Cucumber (Java)**, **Selenium WebDriver**
+and **TestNG**, following the **Page Object Model**. Every scenario is a whole journey: login → browse → cart →
+checkout → order → logout, checking each screen on the way.
 
-## End-to-end journeys
+## Project structure
 
-`features/journeys/` holds the end-to-end suite: every scenario starts at login and walks a whole
-session (browse → cart → checkout → order → logout), checking each page on the way.
+```
+src
+├── main
+│   ├── java/com/core
+│   │   ├── TestEnvConfig.java          # settings + environment (sit/uat): URL, headless, timeouts, video...
+│   │   └── utils
+│   │       ├── DriverFactory.java      # creates/quits Chrome (one driver per thread)
+│   │       ├── TestDataReader.java     # reads testData/<env>/*.json, saves/reads "File//Key" values
+│   │       └── ScreenRecorder.java     # screen recording of every scenario (Cucumber plugin)
+│   └── resources
+│       ├── config.properties           # default settings (any key: -Dkey=value)
+│       ├── environments.properties     # base URL of each environment
+│       └── log4j2.xml                  # logging -> logs/automation_<date>_<time>.log
+└── test
+    ├── java/com/core
+    │   ├── features                    # Gherkin feature files (the test journeys)
+    │   ├── pages/SwagLabs              # Page Objects: locators + actions, no assertions
+    │   │   ├── components              # Header, SideMenu, Footer (shown on every screen)
+    │   │   └── models                  # Product, CartLine, SortOption, ExpectedCart
+    │   ├── runners
+    │   │   └── MyRunnerTest.java       # Cucumber + TestNG runner: features, glue, tags, reports
+    │   └── stepdef                     # step definitions (assertions live here) + Hooks
+    │       ├── LoginStepDef.java           # login/logout, error messages
+    │       ├── ReusableStepDef.java        # open/verify screens, refresh, URL
+    │       ├── ProductsStepDef.java        # catalog, sorting, add/remove, product details
+    │       ├── CartStepDef.java            # cart screen and badge
+    │       ├── CheckoutStepDef.java        # checkout fields, overview, totals, confirmation
+    │       ├── MenuAndFooterStepDef.java   # side menu, header, footer links
+    │       ├── ParameterTypes.java         # table -> object conversion
+    │       ├── TestContext.java            # page objects + expected cart shared by a scenario's steps
+    │       └── Hooks.java                  # browser, screenshot, screen recording, logging per scenario
+    └── resources
+        ├── testData
+        │   ├── sit                     # Users.json (roles -> credentials), StoreData.json (expected values)
+        │   └── uat
+        └── xmlSuites
+            └── testng.xml              # suite used by mvn test
+logs/                                   # execution logs (one file per run)
+target/cucumber/                        # report.html, results/cucumber.json, result.xml
+target/videos/                          # screen recordings
+target/testData/<env>/                  # values saved during the run ("Save ... in StoreData//Key")
+```
+
+## Feature files
 
 | Feature file | Journeys |
 |---|---|
-| `01_Purchase_Journeys.feature` | Full purchase for standard/performance_glitch users, sort-then-buy for every sort option, buy each product from its details page, open by image then buy the whole catalog |
-| `02_Cart_Journeys.feature` | Change the cart on the products, details and cart pages; cancel at the last step and adjust; cart kept after refresh and re-login; Reset App State then shop again |
-| `03_Checkout_Journeys.feature` | Fix each missing checkout field then order; cancel on each checkout step then order; order totals |
-| `04_Access_Journeys.feature` | Pages blocked before login, every login error, shop, blocked again after logout; locked-out user |
-| `05_Navigation_Journeys.feature` | Side menu from every page while shopping, footer social links in new tabs while shopping, About after an order |
-| `06_Known_Site_Bugs.feature` | `@known_issue` – journeys for problem_user, error_user and visual_user that hit the site's intentional bugs (expected to fail, skipped by default) |
+| `PurchaseJourneys.feature` | Full purchase for StandardUser/PerformanceGlitchUser, sort-then-buy for every sort option, buy each product from its details screen, open by image then buy the whole catalog |
+| `CartJourneys.feature` | Change the cart on every screen; cancel at the last step and adjust; cart kept after refresh and re-login; Reset App State then shop again |
+| `CheckoutJourneys.feature` | Fix each missing checkout field then order; cancel on each checkout step then order; order summary (item total, tax, total) |
+| `AccessJourneys.feature` | Screens blocked before login, every login error, shop, blocked again after logout; locked-out user |
+| `NavigationJourneys.feature` | Side menu from every screen while shopping, footer social links in new tabs, About after an order |
+| `KnownSiteBugs.feature` | `@known_issue` – journeys for ProblemUser, ErrorUser and VisualUser that hit the site's intentional bugs (expected to fail, skipped by default) |
+
+### Gherkin style
+
+```gherkin
+Scenario Outline: Full Purchase From Login To Logout
+  Given Customer Login as a "<User>"                       # role from testData/<env>/Users.json
+  And Add product "Sauce Labs Backpack" to cart
+  And Open cart
+  And Click on checkout
+  And I fill the following fields:
+    | label       | value       |
+    | First Name  | <FirstName> |
+    | Last Name   | <LastName>  |
+    | Postal Code | 12345       |
+  And Click on continue
+  And Save the order total in "StoreData//OrderTotal"     # keep a value for later steps
+  Then Verify checkout overview:
+    | Payment Information | StoreData//PaymentInformation |   # value from testData/<env>/StoreData.json
+    | Total               | StoreData//OrderTotal         |   # or saved earlier in the run
+  And Click on finish
+  Then Verify order confirmation "StoreData//ConfirmationHeader"
+  And Customer Logout
+
+  Examples:
+    | User         | FirstName | LastName |
+    | StandardUser | Marwa     | Ashraf   |
+```
+
+- A `"File//Key"` value is read from `testData/<env>/File.json`, or from a value saved earlier in the run with
+  `Save ... in "File//Key"`.
+- The scenario remembers every product added or removed, so `Verify cart contains the selected products`,
+  `Verify checkout overview lists the selected products` and `Verify order totals with "8%" tax` check the cart
+  and the order against what the scenario actually did.
+- Screen names for `Customer Open screen` / `Verify screen ... is displayed`: Login, Products, Product Details,
+  Cart, Checkout Information, Checkout Overview, Checkout Complete.
+
+## Running the tests
 
 ```bash
-mvn test -Dcucumber.filter.tags="@journey and not @known_issue"   # end-to-end suite (green)
-mvn test -Dcucumber.filter.tags="@known_issue"                    # show the site's intentional bugs
+mvn test                                            # all journeys (src/test/resources/xmlSuites/testng.xml)
+mvn test -Dheadless=true                            # headless Chrome
+mvn test -Denv=uat                                  # another environment (URL + testData/uat)
+mvn test -Dcucumber.filter.tags="@Smoke"            # by tag: @Purchase @Cart @Checkout @Authentication @Navigation ...
+mvn test -Dcucumber.filter.tags="@known_issue"      # show the site's intentional bugs
+
+# use a specific Chrome + matching ChromeDriver (no Selenium Manager download)
+mvn test -Dchrome.binary=/path/to/chrome -Dwebdriver.chrome.driver=/path/to/chromedriver
 ```
 
 The runner skips `@known_issue` by default; passing `-Dcucumber.filter.tags` replaces that filter.
 
 ## Screen recordings and screenshots
 
-Every scenario is screen recorded: while it runs, `Utility/ScreenRecorder` streams the browser tab as a
-live video (Chrome DevTools screencast). When the scenario ends, `Hooks` writes it as an MP4 that plays at
-the real speed of the test, with the step that was running shown in a caption bar (green = passed,
-red = failed). The video is attached to the Cucumber HTML report and the Allure report next to the
-screenshot, and saved in `target/videos/`.
+Every scenario is screen recorded: while it runs, `ScreenRecorder` streams the browser tab as a live video
+(Chrome DevTools screencast). When the scenario ends, `Hooks` writes it as an MP4 that plays at the real speed of
+the test, with the step that was running shown in a caption bar (green = passed, red = failed). The video is
+attached to the Cucumber HTML report and the Allure report next to the screenshot, and saved in `target/videos/`.
 
 Works in headless mode and on any OS with any Chrome version (it records the browser tab, not the desktop),
 no ffmpeg or screen-recording permission needed.
 
 ```bash
-mvn test                       # video of every scenario, screenshot when a scenario fails (defaults)
-mvn test -Dvideo=failed        # keep videos of failed scenarios only
+mvn test -Dvideo=failed        # keep videos of failed scenarios only (default: all)
 mvn test -Dvideo=off           # no recording
-mvn test -Dscreenshot=all      # final screenshot for every scenario, not only failures
+mvn test -Dscreenshot=all      # final screenshot for every scenario (default: failed only)
 ```
 
-The defaults are in `src/test/resources/config.properties`.
+## Reports and logs
 
-## Coverage
-
-| Feature file | What it covers |
-|---|---|
-| `01_Login_and_Logout.feature` | Login for every user, all login error messages, dismissing errors, pages blocked without login, logout |
-| `02_Products.feature` | Catalog names/prices/descriptions/images, all 4 sort options for every user, sort kept after navigation, product details (by name and by image) |
-| `03_Cart.feature` | Add/remove from the products page, the details page and the cart page, cart badge, cart contents, continue shopping, cart kept after refresh and re-login, Reset App State |
-| `04_Checkout.feature` | Full checkout for every user, order summary (items, payment, shipping, item total, 8% tax, total), required-field errors, cancel on each step, Back Home |
-| `05_Menu_and_Footer.feature` | Side menu options/open/close, All Items from every page, About, footer social links (new tab) and copyright |
-| `06_End_to_End.feature` | Complete journeys: login → sort → add from list and details → cart → checkout → confirm → back home → logout; changing your mind; buying each product; buying everything; returning customer; reset and shop again |
-
-## Project structure
-
-```
-src/test
-├── java
-│   ├── Pages/                 # Page Objects – locators + actions only (no assertions)
-│   │   ├── BasePage.java              # shared helpers, page title, error banner
-│   │   ├── AppPage.java               # page names used in steps ("the cart page") -> URL + title
-│   │   ├── LoginPage.java
-│   │   ├── InventoryPage.java         # products page
-│   │   ├── ProductDetailsPage.java
-│   │   ├── CartPage.java
-│   │   ├── CheckoutInformationPage.java
-│   │   ├── CheckoutOverviewPage.java
-│   │   ├── CheckoutCompletePage.java
-│   │   └── Components/                # Header (cart icon), SideMenu, Footer
-│   ├── StepDefinitions/       # Reusable, parameterized steps (assertions live here)
-│   │   ├── ParameterTypes.java        # {page}, {sortOption}, Product & CheckoutInfo table types
-│   │   ├── NavigationSteps.java
-│   │   ├── LoginSteps.java
-│   │   ├── ProductSteps.java
-│   │   ├── CartSteps.java
-│   │   ├── CheckoutSteps.java
-│   │   └── MenuAndFooterSteps.java
-│   ├── Models/                # Product, CartLine, CheckoutInfo, SortOption, ExpectedCart
-│   ├── Context/               # TestContext shared by all steps of a scenario (PicoContainer)
-│   ├── Hooks/                 # browser setup/teardown, screenshot on failure
-│   ├── Runners/               # TestRunner (Cucumber + TestNG)
-│   └── Utility/               # DriverFactory, ConfigReader
-└── resources
-    ├── config.properties      # base URL, default password, headless, timeout
-    └── features/              # Gherkin feature files
-```
-
-## Writing new scenarios with the reusable steps
-
-Steps are generic and parameterized, so most new scenarios need no new Java code:
-
-```gherkin
-Given the user is logged in as "standard_user"
-When the user sorts the products by "Price (low to high)"
-And the user adds "Sauce Labs Backpack" to the cart          # works on the products or details page
-And the user opens the product "Sauce Labs Onesie"
-And the user adds "Sauce Labs Onesie" to the cart
-And the user checks out with first name "A", last name "B" and postal code "123"
-Then the user should be on the checkout overview page        # any page: login, products, product details, cart, ...
-And the checkout overview should list the selected products  # compares with everything added/removed so far
-And the tax should be 8% of the item total
-```
-
-The scenario remembers every product added or removed (`ExpectedCart`), so steps like
-`the cart should contain the selected products` and `the item total should match the selected products`
-check the cart and the order against what the scenario actually did.
-
-## Running the tests
-
-```bash
-mvn test                                         # all scenarios (via testng.xml)
-mvn test -Dheadless=true                         # headless Chrome
-mvn test -Dcucumber.filter.tags="@e2e"           # end-to-end journeys only
-mvn test -Dcucumber.filter.tags="@smoke"         # quick smoke run
-mvn test -Dcucumber.filter.tags="not @known_issue"
-
-# use a specific Chrome + matching ChromeDriver (no Selenium Manager download)
-mvn test -Dchrome.binary=/path/to/chrome -Dwebdriver.chrome.driver=/path/to/chromedriver
-```
-
-Chrome and ChromeDriver must have the same major version. Any key in `config.properties` can be overridden with `-Dkey=value`.
-
-Tags: `@smoke`, `@e2e`, `@authentication`, `@products`, `@sorting`, `@product_details`, `@cart`, `@persistence`, `@checkout`, `@navigation`, `@menu`, `@footer`, `@negative`, `@security`, `@known_issue`, plus the original test case IDs (`@TC_10` … `@TC_26`, `@TestLogin`, …).
-
-Scenarios run for every user in the `Examples:` tables. `problem_user`, `error_user` and `visual_user` have deliberate bugs on the site, so some of their scenarios are expected to fail.
-
-## Reports
-
-- Cucumber HTML: `target/cucumber-reports/cucumber.html`
-- Cucumber JSON: `target/cucumber-reports/cucumber.json`
+- Cucumber HTML: `target/cucumber/report.html`
+- Cucumber JSON / JUnit XML: `target/cucumber/results/cucumber.json`, `target/cucumber/result.xml`
 - Allure: `allure serve target/allure-results`
+- Execution log: `logs/automation_<date>_<time>.log`
